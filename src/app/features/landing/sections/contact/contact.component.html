@@ -1,0 +1,243 @@
+<!-- Contacto / CTA Final — migrated 1:1 from original index.html lines ~1459-1622 -->
+<section id="contact" class="py-24 relative overflow-hidden bg-on-background text-white">
+
+  <!-- Background -->
+  <div class="absolute inset-0 z-0">
+    <img
+      src="assets/images/slide_13_img_38.png"
+      alt="Textura de acero y fachada industrial metálica de fondo para contacto en YAK Logística"
+      loading="lazy"
+      class="w-full h-full object-cover object-center"
+    />
+    <div class="absolute inset-0 bg-on-background/85 z-10 backdrop-blur-[2px]"></div>
+  </div>
+
+  <div class="relative z-20 max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <!-- CTA Text -->
+      <div>
+        <h2 appScrollReveal class="font-headline-xl text-headline-xl md:text-[48px] md:leading-[56px] text-white mb-6 reveal-on-scroll">
+          Eleva el estándar de tu infraestructura logística.
+        </h2>
+        <p appScrollReveal class="font-body-lg text-gray-300 mb-8 max-w-lg reveal-on-scroll animation-delay-100">
+          Déjanos tus datos y un ingeniero especializado te contactará para evaluar las necesidades específicas de tus instalaciones y proponerte la solución más eficiente.
+        </p>
+        <div appScrollReveal class="flex items-center gap-4 text-gray-300 font-body-md mb-4 reveal-on-scroll animation-delay-200">
+          <span class="material-symbols-outlined text-primary">check_circle</span>
+          Asesoría técnica sin costo
+        </div>
+        <div appScrollReveal class="flex items-center gap-4 text-gray-300 font-body-md mb-4 reveal-on-scroll animation-delay-300">
+          <span class="material-symbols-outlined text-primary">check_circle</span>
+          Cotización detallada y planos preliminares
+        </div>
+        <div appScrollReveal class="flex items-center gap-4 text-gray-300 font-body-md reveal-on-scroll animation-delay-400">
+          <span class="material-symbols-outlined text-primary">check_circle</span>
+          Garantía directa de fábrica
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div appScrollReveal class="glass-card bg-white/10 p-8 md:p-10 rounded-3xl border border-white/20 shadow-2xl reveal-on-scroll animation-delay-300">
+
+        <!-- Success Message -->
+        @if (submitted()) {
+          <div class="text-center py-8">
+            <span class="material-symbols-outlined text-6xl text-primary mb-4 block" style="font-variation-settings: 'FILL' 1">check_circle</span>
+            <h3 class="font-headline-md text-white mb-2">¡Mensaje enviado!</h3>
+            <p class="font-body-md text-gray-300">Un asesor se pondrá en contacto contigo pronto.</p>
+          </div>
+        }
+
+        <!-- Form Fields -->
+        @if (!submitted()) {
+          <form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-5">
+            <!-- row 1: Nombre Completo & Empresa -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div appScrollReveal class="reveal-on-scroll animation-delay-100">
+                <label for="fullName" class="block font-label-sm text-sm text-gray-300 mb-2">Nombre Completo</label>
+                <input
+                  id="fullName"
+                  type="text"
+                  formControlName="fullName"
+                  placeholder="Ej. Juan Pérez"
+                  class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                  [class.border-red-400]="isFieldInvalid('fullName')"
+                  [class.focus:border-red-400]="isFieldInvalid('fullName')"
+                  [class.focus:ring-red-400]="isFieldInvalid('fullName')"
+                />
+                @if (isFieldInvalid('fullName')) {
+                  <span class="text-xs text-red-400 mt-1.5 block">
+                    @if (form.get('fullName')?.errors?.['required']) { El nombre completo es obligatorio. }
+                    @if (form.get('fullName')?.errors?.['minlength']) { Debe tener al menos 3 caracteres. }
+                  </span>
+                }
+              </div>
+              <div appScrollReveal class="reveal-on-scroll animation-delay-200">
+                <label for="company" class="block font-label-sm text-sm text-gray-300 mb-2">Empresa</label>
+                <input
+                  id="company"
+                  type="text"
+                  formControlName="company"
+                  placeholder="Ej. Industrias ABC"
+                  class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                  [class.border-red-400]="isFieldInvalid('company')"
+                  [class.focus:border-red-400]="isFieldInvalid('company')"
+                  [class.focus:ring-red-400]="isFieldInvalid('company')"
+                />
+                @if (isFieldInvalid('company')) {
+                  <span class="text-xs text-red-400 mt-1.5 block">
+                    @if (form.get('company')?.errors?.['required']) { El nombre de la empresa es obligatorio. }
+                    @if (form.get('company')?.errors?.['minlength']) { Debe tener al menos 2 caracteres. }
+                  </span>
+                }
+              </div>
+            </div>
+
+            <!-- row 2: Teléfono Corporativo & Correo Electrónico -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div appScrollReveal class="reveal-on-scroll animation-delay-300">
+                <label for="phone" class="block font-label-sm text-sm text-gray-300 mb-2">Teléfono Corporativo</label>
+                <div class="relative flex items-center">
+                  <span class="absolute left-4 text-gray-400 font-body-md select-none pointer-events-none">+57</span>
+                  <input
+                    id="phone"
+                    type="tel"
+                    formControlName="phone"
+                    placeholder="300 123 4567"
+                    class="w-full bg-white/5 border border-white/10 rounded-lg pl-14 pr-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                    [class.border-red-400]="isFieldInvalid('phone')"
+                    [class.focus:border-red-400]="isFieldInvalid('phone')"
+                    [class.focus:ring-red-400]="isFieldInvalid('phone')"
+                  />
+                </div>
+                @if (isFieldInvalid('phone')) {
+                  <span class="text-xs text-red-400 mt-1.5 block">
+                    @if (form.get('phone')?.errors?.['required']) { El teléfono corporativo es obligatorio. }
+                    @if (form.get('phone')?.errors?.['pattern']) { Debe tener exactamente 10 dígitos (ej. 300 123 4567). }
+                  </span>
+                }
+              </div>
+              <div appScrollReveal class="reveal-on-scroll animation-delay-400">
+                <label for="email" class="block font-label-sm text-sm text-gray-300 mb-2">Correo Electrónico</label>
+                <input
+                  id="email"
+                  type="email"
+                  formControlName="email"
+                  placeholder="juan@empresa.com"
+                  class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                  [class.border-red-400]="isFieldInvalid('email')"
+                  [class.focus:border-red-400]="isFieldInvalid('email')"
+                  [class.focus:ring-red-400]="isFieldInvalid('email')"
+                />
+                @if (isFieldInvalid('email')) {
+                  <span class="text-xs text-red-400 mt-1.5 block">
+                    @if (form.get('email')?.errors?.['required']) { El correo electrónico es obligatorio. }
+                    @if (form.get('email')?.errors?.['email']) { Ingresa un correo electrónico válido. }
+                  </span>
+                }
+              </div>
+            </div>
+
+            <!-- row 3: Solución de Interés principal & Ciudad -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div appScrollReveal class="reveal-on-scroll animation-delay-500">
+                <label for="interest" class="block font-label-sm text-sm text-gray-300 mb-2">Solución de Interés</label>
+                <select
+                  id="interest"
+                  formControlName="interest"
+                  class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors appearance-none [&>option]:text-on-background"
+                  [class.border-red-400]="isFieldInvalid('interest')"
+                  [class.focus:border-red-400]="isFieldInvalid('interest')"
+                  [class.focus:ring-red-400]="isFieldInvalid('interest')"
+                >
+                  <option value="" disabled selected>Seleccione una opción...</option>
+                  <option value="puertas-rapidas">Puertas Rápidas</option>
+                  <option value="plataformas">Plataformas Niveladoras</option>
+                  <option value="abrigos">Abrigos de Muelle</option>
+                  <option value="puertas-seccionales">Puertas Seccionales</option>
+                  <option value="dobo">Docking Before Opening (DOBO)</option>
+                  <option value="protecciones">Protecciones Industriales</option>
+                  <option value="puertas-especializadas">Puertas Especializadas (ATEX / Megapack)</option>
+                  <option value="loading-houses">Loading Houses / Túneles Isotérmicos</option>
+                  <option value="otro">Otro / Asesoría General</option>
+                </select>
+                @if (isFieldInvalid('interest')) {
+                  <span class="text-xs text-red-400 mt-1.5 block">
+                    Seleccione una opción.
+                  </span>
+                }
+              </div>
+              <div appScrollReveal class="reveal-on-scroll animation-delay-600">
+                <label for="city" class="block font-label-sm text-sm text-gray-300 mb-2">Ciudad</label>
+                <input
+                  id="city"
+                  type="text"
+                  formControlName="city"
+                  placeholder="Ej. Bogotá"
+                  class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                  [class.border-red-400]="isFieldInvalid('city')"
+                  [class.focus:border-red-400]="isFieldInvalid('city')"
+                  [class.focus:ring-red-400]="isFieldInvalid('city')"
+                />
+                @if (isFieldInvalid('city')) {
+                  <span class="text-xs text-red-400 mt-1.5 block">
+                    @if (form.get('city')?.errors?.['required']) { La ciudad es obligatoria. }
+                    @if (form.get('city')?.errors?.['minlength']) { Debe tener al menos 3 caracteres. }
+                  </span>
+                }
+              </div>
+            </div>
+
+            <!-- row 4: Mensaje -->
+            <div appScrollReveal class="reveal-on-scroll animation-delay-700">
+              <label for="message" class="block font-label-sm text-sm text-gray-300 mb-2">Mensaje / Requerimientos</label>
+              <textarea
+                id="message"
+                formControlName="message"
+                rows="3"
+                placeholder="Describe tu proyecto o las necesidades de tu infraestructura..."
+                class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none"
+                [class.border-red-400]="isFieldInvalid('message')"
+                [class.focus:border-red-400]="isFieldInvalid('message')"
+                [class.focus:ring-red-400]="isFieldInvalid('message')"
+              ></textarea>
+              @if (isFieldInvalid('message')) {
+                <span class="text-xs text-red-400 mt-1.5 block">
+                  @if (form.get('message')?.errors?.['required']) { El mensaje es obligatorio. }
+                  @if (form.get('message')?.errors?.['minlength']) { El mensaje debe tener al menos 10 caracteres. }
+                </span>
+              }
+            </div>
+
+            @if (hasError()) {
+              <div class="text-sm text-red-400 text-center bg-red-950/20 border border-red-500/30 rounded-lg py-2.5 px-4 mt-2">
+                Hubo un error al enviar el correo. Te hemos redirigido a WhatsApp para procesar tu asesoría.
+              </div>
+            }
+
+            @if (showValidationError() && form.invalid) {
+              <div class="text-sm text-red-400 text-center bg-red-950/20 border border-red-500/30 rounded-lg py-2.5 px-4 mt-2">
+                Por favor, completa correctamente todos los campos obligatorios antes de continuar.
+              </div>
+            }
+
+            <button
+              type="submit"
+              [disabled]="isLoading()"
+              appScrollReveal
+              class="w-full bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white py-4 rounded-xl font-label-sm text-base font-bold uppercase tracking-wider mt-4 shadow-[0_4px_14px_rgba(250,84,9,0.3)] hover:shadow-[0_6px_20px_rgba(250,84,9,0.5)] transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed reveal-on-scroll animation-delay-800"
+            >
+              {{ isLoading() ? 'Enviando...' : 'Solicitar Asesoría Ahora' }}
+            </button>
+
+            <p class="text-xs text-gray-400 text-center mt-4">
+              Al enviar este formulario, aceptas nuestra Política de Tratamiento de Datos.
+            </p>
+          </form>
+        }
+
+      </div>
+    </div>
+  </div>
+</section>

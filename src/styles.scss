@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+// SCSS @use must come BEFORE @tailwind directives
+@use 'styles/components';
+@use 'styles/hero';
+@use 'styles/animations';
+
+// Tailwind CSS v3 directives
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

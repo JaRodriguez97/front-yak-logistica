@@ -1,0 +1,87 @@
+// Hero section — migrated from original index.html <style> block
+
+.hero-content {
+  --hero-shift-x: 0px;
+  transform: translate3d(var(--hero-shift-x), 0, 0);
+  transition: transform 0.72s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.hero-heading,
+.hero-description,
+.hero-cta,
+.hero-stats {
+  opacity: 1;
+  transition:
+    opacity 1s ease,
+    transform 0.72s cubic-bezier(0.22, 1, 0.36, 1),
+    margin 0.72s cubic-bezier(0.22, 1, 0.36, 1),
+    text-align 0.72s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-content.is-fading {
+  .hero-heading,
+  .hero-description,
+  .hero-cta,
+  .hero-stats {
+    opacity: 0;
+  }
+}
+
+.hero-services-panel {
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+}
+
+.hero-bg-image {
+  opacity: 1;
+  transition: opacity 0.8s ease;
+  will-change: opacity;
+
+  &.is-fading {
+    opacity: 0.18;
+  }
+}
+
+.hero-service-item {
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateX(-6px);
+  }
+
+  &.active {
+    background: rgba(255, 255, 255, 0.24);
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 18px -12px rgba(0, 0, 0, 0.45);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-content.is-shifted {
+    --hero-shift-x: 0px;
+
+    .hero-heading,
+    .hero-description {
+      margin-left: 0;
+      margin-right: auto;
+      text-align: left;
+    }
+
+    .hero-cta {
+      margin-left: 0;
+      margin-right: auto;
+      justify-content: flex-start;
+    }
+
+    .hero-stats {
+      margin-left: 0;
+      margin-right: auto;
+    }
+  }
+}

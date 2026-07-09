@@ -1,0 +1,158 @@
+<section
+  id="inicio"
+  class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden"
+>
+  <!-- Background Image -->
+  <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 bg-black/60 z-10"></div>
+    <img
+      id="hero-bg-image"
+      [src]="activeBg()"
+      alt="Fondo de instalaciones logísticas e infraestructura industrial de YAK Logística"
+      fetchpriority="high"
+      class="hero-bg-image w-full h-full object-cover object-center animate-fade-in"
+      [class.is-fading]="isFading()"
+    />
+  </div>
+
+  <!-- Hero Content -->
+  <div
+    class="relative z-20 max-w-[1440px] w-full mx-auto px-margin-mobile md:px-margin-desktop text-center text-white flex flex-col items-center"
+  >
+    <div class="w-full grid grid-cols-1 items-center relative">
+      <div
+        id="hero-content"
+        class="hero-content flex flex-col items-center lg:items-center"
+        [class.is-shifted]="isShifted()"
+        [class.is-fading]="isFading()"
+      >
+        <!-- Heading -->
+        <h1
+          class="hero-heading font-headline-xl text-headline-xl md:text-[56px] md:leading-[64px] max-w-4xl mb-6 tracking-tight animate-fade-in"
+          [innerHTML]="activeTitle()"
+        ></h1>
+
+        <!-- Description -->
+        <p
+          class="hero-description font-body-lg text-body-lg md:text-xl text-gray-200 max-w-2xl mb-10 animate-fade-in animation-delay-200"
+        >
+          {{ activeDescription() }}
+        </p>
+
+        <!-- CTA Buttons -->
+        <div
+          class="hero-cta flex flex-col sm:flex-row gap-4 mb-16 w-full sm:w-auto"
+        >
+          <a
+            href="https://wa.me/573104615185"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary px-8 py-4 rounded-full font-label-sm text-label-sm font-bold tracking-wider uppercase flex items-center justify-center gap-2 animate-fade-in animation-delay-400"
+          >
+            Solicitar Asesoría
+            <span
+              class="material-symbols-outlined"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >arrow_forward</span
+            >
+          </a>
+          <a
+            routerLink="/"
+            fragment="services"
+            class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-full font-label-sm text-label-sm font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-center animate-fade-in animation-delay-500"
+          >
+            Ver Portafolio
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div
+          class="hero-stats grid grid-cols-2 lg:grid-cols-5 gap-4 w-full max-w-5xl mx-auto"
+        >
+          <!--  estas clases para el div que está arriba y que desaparezca cuando se hace hover
+            sobre los items de la lista de servicios lateral
+            class="hero-stats grid grid-cols-2 lg:grid-cols-5 gap-4 w-full max-w-5xl mx-auto transition-all duration-500"
+          [class.hidden]="activeIndex() !== null"
+          [class.invisible]="activeIndex() !== null"
+          [class.pointer-events-none]="activeIndex() !== null" -->
+          @for (counter of counters; track counter.label; let i = $index) {
+            <div
+              class="animate-fade-in"
+              [class.animation-delay-500]="i === 0"
+              [class.animation-delay-600]="i === 1"
+              [class.animation-delay-700]="i === 2"
+              [class.animation-delay-800]="i >= 3"
+            >
+              <a
+                [routerLink]="counter.route"
+                class="glass-card-light rounded-2xl p-6 text-center text-on-surface transform hover:-translate-y-2 hover:scale-95 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 group cursor-pointer flex flex-col justify-between h-full"
+              >
+                <img
+                  [src]="counter.image"
+                  [alt]="counter.label + ' - Métrica YAK Logística'"
+                  class="h-25 w-auto object-contain mx-auto transition-transform duration-300"
+                />
+                <div
+                  class="font-headline-md text-headline-md font-bold transform group-hover:scale-105 group-hover:text-primary transition-all duration-300"
+                >
+                  {{ counter.prefix }}{{ counterValues()[i] }}
+                </div>
+                <div
+                  class="font-label-sm text-label-sm text-on-surface-variant font-medium group-hover:text-on-surface transition-colors duration-300"
+                >
+                  {{ counter.label }}
+                </div>
+              </a>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services Panel -->
+  <aside
+    id="hero-services-panel"
+    class="hero-services-panel w-full max-w-max mx-auto mt-8 lg:mt-0 lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 rounded-xl p-4 md:p-3 text-left z-20"
+    (mouseenter)="onPanelEnter()"
+    (mouseleave)="onPanelLeave()"
+    (focusin)="onPanelEnter()"
+    (focusout)="onPanelFocusOut($event)"
+  >
+    <ul class="space-y-2">
+      @for (service of services; track service.alt; let i = $index) {
+        <li
+          class="animate-fade-in"
+          [class.animation-delay-300]="i === 0"
+          [class.animation-delay-400]="i === 1"
+          [class.animation-delay-500]="i === 2"
+          [class.animation-delay-600]="i === 3"
+          [class.animation-delay-700]="i === 4"
+          [class.animation-delay-800]="i === 5"
+          [class.animation-delay-900]="i === 6"
+          [class.animation-delay-1000]="i === 7"
+        >
+          <a
+            [routerLink]="service.route"
+            class="hero-service-item w-full flex items-center justify-center rounded-xl border border-white/30 p-2 transition-colors"
+            [style.background]="
+              activeIndex() === i
+                ? 'rgba(255,255,255,0.10)'
+                : 'rgba(255,255,255,0.05)'
+            "
+            [class.active]="activeIndex() === i"
+            [attr.aria-pressed]="activeIndex() === i"
+            (mouseenter)="onServiceHover(i)"
+            (focus)="onServiceHover(i)"
+          >
+            <img
+              [src]="service.thumb"
+              [alt]="'Miniatura de ' + service.alt"
+              class="w-[39px] h-[39px] rounded object-cover"
+            />
+          </a>
+        </li>
+      }
+    </ul>
+  </aside>
+</section>

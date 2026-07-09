@@ -1,0 +1,329 @@
+<section class="min-h-screen bg-surface-container-lowest text-on-surface pt-24 pb-20">
+  <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop">
+
+    @if (product) {
+      <!-- Breadcrumb and Back -->
+      <div class="mb-10 flex items-center justify-between animate-fade-in">
+        <a
+          routerLink="/"
+          fragment="services"
+          class="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-hover hover:underline transition-colors group"
+        >
+          <span class="material-symbols-outlined text-lg transition-transform group-hover:-translate-x-1">arrow_back</span>
+          Volver al portafolio
+        </a>
+        <span class="text-xs uppercase tracking-widest bg-surface-container-high px-4 py-1.5 rounded-full font-bold text-primary">
+          Producto Industrial
+        </span>
+      </div>
+
+      <!-- Main Product Header (Always visible) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 animate-fade-in">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6 font-headline-xl text-on-surface tracking-tight leading-tight">
+            {{ product.title }}
+          </h1>
+          <div class="space-y-4">
+            @for (paragraph of product.content; track paragraph) {
+              <p class="text-base md:text-lg text-on-surface-variant leading-relaxed">
+                {{ paragraph }}
+              </p>
+            }
+          </div>
+          
+          @if (!product.subCategories || product.subCategories.length === 0) {
+            <div class="mt-8 animate-fade-in animation-delay-200">
+              <a
+                href="https://wa.me/573104615185"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-primary inline-flex items-center gap-3 px-8 py-4 rounded-full font-label-md text-label-md font-bold uppercase transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg shadow-primary/20"
+              >
+                Solicitar Cotización
+                <span class="material-symbols-outlined text-md" style="font-variation-settings: 'FILL' 1">arrow_forward</span>
+              </a>
+            </div>
+          }
+        </div>
+
+        <!-- Featured Product Image (Always visible) -->
+        <div class="lg:col-span-5 animate-fade-in animation-delay-200">
+          @if (getActiveImages().length > 0) {
+            <div (click)="openLightbox(0)" class="relative group overflow-hidden rounded-3xl shadow-2xl h-[300px] md:h-[380px] cursor-zoom-in">
+              <img
+                [src]="getImageUrl(getActiveImages()[0])"
+                [alt]="'Imagen principal de ' + product.title + ' - Solución de Logística Industrial YAK Logística'"
+                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+              />
+              <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center">
+                <div class="w-12 h-12 bg-white/20 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center transform scale-75 group-hover:scale-100 transition-transform duration-300">
+                  <span class="material-symbols-outlined text-white text-2xl">zoom_in</span>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- SUBCATEGORIES SECTION (Tabs + Tab Content + Tab Gallery) -->
+      @if (product.subCategories && product.subCategories.length > 0) {
+        <div class="mt-16 border-t border-outline-variant pt-12 animate-fade-in">
+          <!-- Tabs Navigation -->
+          <div class="mb-10 flex flex-wrap gap-2 md:gap-4 border-b border-outline-variant">
+            @for (sub of product.subCategories; track sub.title; let idx = $index) {
+              <button
+                type="button"
+                (click)="setActiveTab(idx)"
+                [class.border-primary]="activeTabIdx() === idx"
+                [class.text-primary]="activeTabIdx() === idx"
+                [class.font-bold]="activeTabIdx() === idx"
+                [class.border-transparent]="activeTabIdx() !== idx"
+                [class.text-on-surface-variant]="activeTabIdx() !== idx"
+                class="pb-4 px-6 border-b-2 font-headline-md text-base md:text-lg transition-all focus:outline-none hover:text-primary"
+              >
+                {{ sub.title }}
+              </button>
+            }
+          </div>
+
+          <!-- Active Subcategory Content -->
+          <div class="mb-12 max-w-4xl">
+            <h2 class="text-3xl font-bold mb-4 font-headline-lg text-on-surface animate-fade-in">
+              {{ getActiveSubCategory()?.title }}
+            </h2>
+            @if (getActiveSubCategory()?.subtitle) {
+              <p class="text-primary font-semibold text-lg mb-4 italic animate-fade-in animation-delay-100">
+                {{ getActiveSubCategory()?.subtitle }}
+              </p>
+            }
+            <div class="space-y-4 animate-fade-in animation-delay-200">
+              @for (paragraph of getActiveContent(); track paragraph) {
+                <p class="text-base text-on-surface-variant leading-relaxed">
+                  {{ paragraph }}
+                </p>
+              }
+            </div>
+            <div class="mt-8 animate-fade-in animation-delay-300">
+              <a
+                href="https://wa.me/573104615185"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-primary inline-flex items-center gap-3 px-8 py-4 rounded-full font-label-md text-label-md font-bold uppercase transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg shadow-primary/20"
+              >
+                Solicitar Cotización
+                <span class="material-symbols-outlined text-md" style="font-variation-settings: 'FILL' 1">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Subcategory Gallery -->
+          @if (getActiveImages().length > 1) {
+            <div class="border-t border-outline-variant/50 pt-10 animate-fade-in animation-delay-300">
+              <div class="flex items-baseline justify-between mb-8">
+                <h3 class="font-headline-lg text-2xl font-bold text-on-surface">Galería de {{ getActiveSubCategory()?.title }}</h3>
+                <span class="text-sm text-on-surface-variant">{{ getActiveImages().length }} imágenes</span>
+              </div>
+
+              <!-- SPECIALIZED 4-IMAGE LAYOUT -->
+              @if (getActiveImages().length === 4) {
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  @for (img of getActiveImages(); track img; let i = $index) {
+                    @if (i > 0) {
+                      <div (click)="openLightbox(i)" class="relative overflow-hidden rounded-2xl shadow-md h-64 group cursor-zoom-in">
+                        <img
+                          [src]="getImageUrl(img)"
+                          [alt]="'Ficha técnica y galería de ' + product.title + ' ' + getActiveSubCategory()?.title + ' - Foto ' + i"
+                          loading="lazy"
+                          class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                        />
+                        <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center">
+                          <div class="w-10 h-10 bg-white/20 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center transform scale-75 group-hover:scale-100 transition-transform duration-300">
+                            <span class="material-symbols-outlined text-white text-xl">zoom_in</span>
+                          </div>
+                        </div>
+                      </div>
+                    }
+                  }
+                </div>
+              } @else {
+                <!-- BENTO GRID -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 auto-rows-[160px] md:auto-rows-[220px]">
+                  @for (img of getActiveImages(); track img; let i = $index) {
+                    @if (i > 0) {
+                      <div
+                        (click)="openLightbox(i)"
+                        class="relative overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 group cursor-pointer"
+                        [class.col-span-2]="i % 5 === 0 || i % 5 === 3"
+                        [class.row-span-2]="i % 5 === 0 || i % 5 === 2"
+                      >
+                        <img
+                          [src]="getImageUrl(img)"
+                          [alt]="'Ficha técnica y galería de ' + product.title + ' ' + getActiveSubCategory()?.title + ' - Foto ' + i"
+                          loading="lazy"
+                          class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                        />
+                        <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center">
+                          <div class="w-10 h-10 bg-white/20 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center transform scale-75 group-hover:scale-100 transition-transform duration-300">
+                            <span class="material-symbols-outlined text-white text-xl">zoom_in</span>
+                          </div>
+                        </div>
+                      </div>
+                    }
+                  }
+                </div>
+              }
+            </div>
+          }
+        </div>
+      }
+
+      <!-- GENERAL GALLERY SECTION (Only if NO subcategories) -->
+      @if ((!product.subCategories || product.subCategories.length === 0) && product.images.length > 1) {
+        <div class="border-t border-outline-variant pt-16 animate-fade-in">
+          <div class="flex items-baseline justify-between mb-8">
+            <h2 class="font-headline-lg text-3xl font-bold text-on-surface">Galería de Soluciones</h2>
+            <span class="text-sm text-on-surface-variant">{{ product.images.length }} imágenes</span>
+          </div>
+
+          <!-- SPECIALIZED 4-IMAGE LAYOUT -->
+          @if (product.images.length === 4) {
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              @for (img of product.images; track img; let i = $index) {
+                @if (i > 0) {
+                  <div (click)="openLightbox(i)" class="relative overflow-hidden rounded-2xl shadow-md h-64 group cursor-zoom-in animate-fade-in"
+                       [class.animation-delay-100]="i === 1"
+                       [class.animation-delay-200]="i === 2"
+                       [class.animation-delay-300]="i === 3">
+                    <img
+                      [src]="getImageUrl(img)"
+                      [alt]="'Galería de producto de ' + product.title + ' - Foto ' + i + ' YAK Logística'"
+                      loading="lazy"
+                      class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center">
+                      <div class="w-10 h-10 bg-white/20 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center transform scale-75 group-hover:scale-100 transition-transform duration-300">
+                        <span class="material-symbols-outlined text-white text-xl">zoom_in</span>
+                      </div>
+                    </div>
+                  </div>
+                }
+              }
+            </div>
+          } @else {
+            <!-- BENTO GRID -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 auto-rows-[160px] md:auto-rows-[220px]">
+              @for (img of product.images; track img; let i = $index) {
+                @if (i > 0) {
+                  <div
+                    (click)="openLightbox(i)"
+                    class="relative overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 group cursor-pointer animate-fade-in"
+                    [class.col-span-2]="i % 5 === 0 || i % 5 === 3"
+                    [class.row-span-2]="i % 5 === 0 || i % 5 === 2"
+                    [class.animation-delay-100]="i === 1"
+                    [class.animation-delay-200]="i === 2"
+                    [class.animation-delay-300]="i === 3"
+                    [class.animation-delay-400]="i >= 4"
+                  >
+                    <img
+                      [src]="getImageUrl(img)"
+                      [alt]="'Galería de producto de ' + product.title + ' - Foto ' + i + ' YAK Logística'"
+                      loading="lazy"
+                      class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center">
+                      <div class="w-10 h-10 bg-white/20 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center transform scale-75 group-hover:scale-100 transition-transform duration-300">
+                        <span class="material-symbols-outlined text-white text-xl">zoom_in</span>
+                      </div>
+                    </div>
+                  </div>
+                }
+              }
+            </div>
+          }
+        </div>
+      }
+
+    } @else {
+      <!-- Not Found State -->
+      <div class="flex flex-col items-center justify-center py-32 text-center animate-fade-in">
+        <span class="material-symbols-outlined text-6xl text-primary mb-4">search_off</span>
+        <h1 class="font-headline-lg text-2xl font-bold text-on-surface mb-2">Producto no encontrado</h1>
+        <p class="font-body-md text-on-surface-variant mb-6">La solución industrial que buscas no existe o se ha movido.</p>
+        <a routerLink="/" class="btn-primary px-8 py-3 rounded-full font-label-sm text-label-sm font-bold uppercase shadow-lg shadow-primary/20">
+          Volver al Inicio
+        </a>
+      </div>
+    }
+
+  </div>
+
+  <!-- Lightbox Modal Overlay -->
+  @if (activeImageIndex() !== null) {
+    <div
+      (click)="closeLightbox()"
+      (wheel)="onZoomWheel($event)"
+      class="fixed inset-0 z-50 bg-black/95 backdrop-blur-lg flex items-center justify-center p-4 transition-all duration-300"
+    >
+      <!-- Navigation controls (only shown when not zoomed) -->
+      @if (zoomLevel() === 1) {
+        <button
+          (click)="prevLightbox($event)"
+          class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white flex items-center justify-center focus:outline-none z-30 transition-colors"
+          aria-label="Anterior"
+        >
+          <span class="material-symbols-outlined text-2xl">chevron_left</span>
+        </button>
+
+        <button
+          (click)="nextLightbox($event)"
+          class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white flex items-center justify-center focus:outline-none z-30 transition-colors"
+          aria-label="Siguiente"
+        >
+          <span class="material-symbols-outlined text-2xl">chevron_right</span>
+        </button>
+      }
+
+      <!-- Close button -->
+      <button
+        (click)="closeLightbox()"
+        class="absolute top-4 right-4 md:top-8 md:right-8 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white flex items-center justify-center focus:outline-none z-30 transition-colors"
+        aria-label="Cerrar"
+      >
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+
+      <!-- Zoom indicator/help tag -->
+      <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 bg-black/60 backdrop-blur-md px-4 py-2 rounded-full text-xs font-semibold text-white/90 select-none pointer-events-none flex items-center gap-2">
+        <span class="material-symbols-outlined text-sm">zoom_in</span>
+        <span>Doble click para zoom. Usa scroll o arrastra la imagen. Zoom: {{ zoomLevel().toFixed(1) }}x</span>
+      </div>
+
+      <!-- Image Wrapper -->
+      <div
+        (click)="$event.stopPropagation()"
+        class="relative max-w-5xl max-h-[85vh] w-full h-full flex items-center justify-center overflow-hidden"
+      >
+        <img
+          [src]="getActiveLightboxImage()"
+          [alt]="product?.title"
+          (mousedown)="onPanStart($event)"
+          (mousemove)="onPanMove($event)"
+          (mouseup)="onPanEnd()"
+          (mouseleave)="onPanEnd()"
+          (touchstart)="onPanStart($event)"
+          (touchmove)="onPanMove($event)"
+          (touchend)="onPanEnd()"
+          (dblclick)="toggleZoom($event)"
+          [style.transform]="'translate(' + panX() + 'px, ' + panY() + 'px) scale(' + zoomLevel() + ')'"
+          class="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl border border-white/10 select-none origin-center"
+          [class.cursor-zoom-in]="zoomLevel() === 1"
+          [class.cursor-grab]="zoomLevel() > 1 && !isDragging"
+          [class.cursor-grabbing]="zoomLevel() > 1 && isDragging"
+          [class.transition-transform]="!isDragging"
+          [class.duration-300]="!isDragging"
+          [class.transition-none]="isDragging"
+        />
+      </div>
+    </div>
+  }
+</section>

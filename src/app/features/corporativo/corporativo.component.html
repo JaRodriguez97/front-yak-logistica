@@ -1,0 +1,131 @@
+<section
+  class="min-h-screen bg-gradient-to-b from-surface-container-lowest via-surface-container-lowest to-surface-container-low text-on-surface pt-28 pb-0"
+>
+  <div class="flex flex-col justify-between min-h-[calc(100vh-112px)]">
+    <div
+      class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop w-full mb-16"
+    >
+      <!-- Breadcrumb and Back -->
+      <div class="mb-12 flex items-center justify-between">
+        <a
+          routerLink="/"
+          class="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-hover hover:underline transition-colors group"
+        >
+          <span
+            class="material-symbols-outlined text-lg transition-transform group-hover:-translate-x-1"
+            >arrow_back</span
+          >
+          Volver al inicio
+        </a>
+        <span
+          class="text-xs uppercase tracking-widest bg-surface-container-high px-4 py-1.5 rounded-full font-bold text-primary"
+        >
+          Nuestra Empresa
+        </span>
+      </div>
+
+      <!-- Quienes Somos Section -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Text content (Left 7 cols) -->
+        <div class="lg:col-span-7 text-left animate-fade-in">
+          <h1
+            class="text-4xl md:text-5xl font-bold mb-8 font-headline-xl text-on-surface tracking-tight leading-tight"
+          >
+            Quiénes Somos
+          </h1>
+          <p
+            class="font-body-lg text-lg md:text-xl text-on-surface-variant leading-relaxed text-wrap mb-6"
+          >
+            Somos una unidad de negocio estratégica de
+            <strong class="text-on-surface font-bold"
+              >Industrias Refridcol S.A.S.</strong
+            >, especializada en desarrollar soluciones de logística industrial,
+            ofreciendo una amplia gama de alternativas que contribuyan al
+            crecimiento integral de su compañía.
+          </p>
+          <p
+            class="font-body-lg text-lg md:text-xl text-on-surface-variant leading-relaxed"
+          >
+            <strong class="text-on-surface font-bold"
+              >Nuestros proyectos industriales están respaldados por nuestros
+              aliados estratégicos, con productos innovadores de la mejor
+              calidad.</strong
+            >
+          </p>
+        </div>
+
+        <!-- Image content (Right 5 cols) -->
+        <div
+          class="lg:col-span-5 flex justify-center relative group animate-fade-in animation-delay-200"
+        >
+          <img
+            src="assets/images/colaboradora.png"
+            alt="Colaboradora de YAK Logística coordinando soluciones operativas de infraestructura"
+            loading="lazy"
+            class="relative z-10 max-h-[480px] w-auto object-contain drop-shadow-xl transform group-hover:scale-[1.02] transition-transform duration-500"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <!-- Orange Transition Divider with Icon Tab -->
+      <div
+        class="relative flex items-center justify-center w-full z-20 -bottom-2"
+      >
+        <div class="absolute inset-0 flex items-center" aria-hidden="true">
+          <div class="w-full h-[10px] bg-primary"></div>
+        </div>
+        <div
+          class="relative z-10 flex items-center justify-center w-12 h-6 bg-primary rounded-b-xl shadow-lg"
+        >
+          <span
+            class="material-symbols-outlined text-white text-base animate-bounce select-none"
+            >keyboard_arrow_down</span
+          >
+        </div>
+      </div>
+
+      <!-- Propuesta de Valor Section -->
+      <div
+        class="w-full mx-auto text-center bg-[#1e1e1e] text-white py-20 px-margin-mobile md:px-margin-desktop"
+      >
+        <div
+          class="max-w-[1440px] mx-auto flex flex-col items-center animate-fade-in animation-delay-100"
+        >
+          <h2
+            class="text-3xl md:text-5xl font-bold mb-4 font-headline-lg text-white tracking-tight"
+          >
+            Propuesta de <span class="text-primary">Valor</span>
+          </h2>
+
+          <!-- Underline decoration -->
+          <div class="w-16 h-1 bg-primary mb-16 rounded-full"></div>
+
+          <!-- 2 images stacked vertically -->
+          <div class="flex flex-col items-center w-full">
+            <!-- Image Card 1 -->
+            <div class="w-[500px] overflow-hidden">
+              <img
+                src="assets/images/propuesta-valor1.png"
+                alt="Esquema conceptual de la Propuesta de Valor de YAK Logística"
+                loading="lazy"
+                class="w-full h-auto object-contain max-h-[500px]"
+              />
+            </div>
+
+            <!-- Image Card 2 -->
+            <div class="w-[500px] overflow-hidden">
+              <img
+                src="assets/images/propuesta-valor2.png"
+                alt="Representación de solución logística integrada y flujos de andén de carga YAK Logística"
+                loading="lazy"
+                class="w-full h-auto object-contain max-h-[500px]"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

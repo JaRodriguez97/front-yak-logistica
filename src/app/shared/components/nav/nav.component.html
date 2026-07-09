@@ -1,0 +1,175 @@
+<nav
+  id="main-nav"
+  class="fixed top-0 w-full z-50 backdrop-blur-2xl border-b shadow-sm transition-all duration-500 animate-slide-down"
+  [style.background-color]="
+    isScrolled() ? 'rgba(0,0,0,0.6)' : 'rgba(255,255,255,0.6)'
+  "
+  [class.shadow-md]="isScrolled()"
+  [style.border]="
+    '1px solid ' + (isScrolled() ? 'rgba(0,0,0,1)' : 'rgba(255,255,255,1)')
+  "
+>
+  <div
+    class="flex justify-between items-center max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-4"
+  >
+    <!-- Logo -->
+    <a
+      routerLink="/"
+      class="flex items-center gap-2 hover:scale-105 transition-transform duration-500 active:scale-95 ease-in-out animate-fade-in"
+    >
+      <img
+        src="assets/images/logo.png"
+        alt="Logotipo oficial de YAK Soluciones Logísticas e Industriales"
+        class="h-8 md:h-10 object-contain"
+      />
+    </a>
+
+    <!-- Desktop Nav Links -->
+    <div class="hidden md:flex items-center gap-8">
+      @for (item of navItems; track item.label) {
+        @if (!item.dropdownItems) {
+          <a
+            [routerLink]="item.route"
+            routerLinkActive="!text-primary"
+            [class.text-white]="isScrolled()"
+            [class.text-on-surface-variant]="!isScrolled()"
+            class="hover:text-primary transition-all font-headline-md text-base font-bold hover:scale-105 duration-1000 animate-fade-in {{
+              item.delayClass
+            }}"
+          >
+            {{ item.label }}
+          </a>
+        } @else {
+          <!-- Dropdown container -->
+          <div class="relative group">
+            <button
+              [class.text-white]="isScrolled()"
+              [class.text-on-surface-variant]="!isScrolled()"
+              class="hover:text-primary transition-colors font-headline-md text-base font-bold hover:scale-105 duration-1000 flex items-center gap-1 focus:outline-none animate-fade-in {{
+                item.delayClass
+              }}"
+            >
+              {{ item.label }}
+              <span
+                class="material-symbols-outlined text-sm transition-transform duration-500 group-hover:rotate-180"
+                >keyboard_arrow_down</span
+              >
+            </button>
+            <div
+              class="absolute left-0 mt-2 w-56 rounded-xl bg-white shadow-lg ring-1 ring-black/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2 border border-gray-100"
+            >
+              @for (subItem of item.dropdownItems; track subItem.route) {
+                <a
+                  [routerLink]="subItem.route"
+                  routerLinkActive="text-primary font-bold"
+                  class="block px-4 py-2 text-sm text-on-surface-variant hover:bg-gray-50 hover:text-primary transition-colors"
+                >
+                  {{ subItem.label }}
+                </a>
+              }
+            </div>
+          </div>
+        }
+      }
+    </div>
+
+    <!-- Desktop Social Icons -->
+    <div class="hidden md:flex items-center gap-3">
+      @for (social of socialItems; track social.label) {
+        <a
+          [href]="social.href"
+          target="_blank"
+          rel="noopener noreferrer"
+          [title]="social.label"
+          [class.text-white]="isScrolled()"
+          [class.text-on-surface-variant]="!isScrolled()"
+          class="w-10 h-10 rounded-full hover:border border-white/70 flex items-center justify-center hover:scale-105 transition-transform animate-fade-in {{
+            social.hoverColorClass
+          }} {{ social.delayClass }}"
+        >
+          <i [class]="social.iconClass"></i>
+        </a>
+      }
+    </div>
+
+    <!-- Mobile Hamburger -->
+    <button
+      aria-label="Abrir menú"
+      [class.text-white]="isScrolled()"
+      [class.text-on-surface]="!isScrolled()"
+      class="md:hidden p-2"
+      (click)="toggleMobileMenu()"
+    >
+      <span class="material-symbols-outlined">{{
+        isMobileMenuOpen() ? "close" : "menu"
+      }}</span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  @if (isMobileMenuOpen()) {
+    <div
+      class="md:hidden backdrop-blur-xl border-t border-white/50 px-margin-mobile py-6 flex flex-col gap-4"
+      [style.background]="
+        isScrolled() ? 'rgba(0,0,0,0.9)' : 'rgba(255,255,255,0.9)'
+      "
+    >
+      @for (item of navItems; track item.label) {
+        @if (!item.dropdownItems) {
+          <a
+            [routerLink]="item.route"
+            (click)="toggleMobileMenu()"
+            [class.text-white]="isScrolled()"
+            [class.text-on-surface-variant]="!isScrolled()"
+            class="hover:text-primary font-bold text-label-sm py-2"
+          >
+            {{ item.label }}
+          </a>
+        } @else {
+          <div class="flex flex-col">
+            <button
+              (click)="toggleMobileDropdown($event)"
+              [class.text-white]="isScrolled()"
+              [class.text-on-surface-variant]="!isScrolled()"
+              class="hover:text-primary font-bold text-label-sm py-2 text-left flex items-center justify-between"
+            >
+              {{ item.label }}
+              <span
+                class="material-symbols-outlined text-sm transition-transform duration-200"
+                [style.transform]="
+                  isMobileDropdownOpen() ? 'rotate(180deg)' : 'none'
+                "
+                >keyboard_arrow_down</span
+              >
+            </button>
+            @if (isMobileDropdownOpen()) {
+              <div
+                class="pl-4 flex flex-col gap-2 border-l border-gray-200 mt-1"
+              >
+                @for (subItem of item.dropdownItems; track subItem.route) {
+                  <a
+                    [routerLink]="subItem.route"
+                    (click)="toggleMobileMenu()"
+                    [class.text-white]="isScrolled()"
+                    [class.text-on-surface-variant]="!isScrolled()"
+                    class="hover:text-primary font-bold text-label-sm py-1.5"
+                  >
+                    {{ subItem.label }}
+                  </a>
+                }
+              </div>
+            }
+          </div>
+        }
+      }
+
+      <a
+        href="https://wa.me/573104615185"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-primary px-6 py-3 rounded-full text-center font-label-sm text-label-sm font-bold uppercase w-max"
+        >Contactar</a
+      >
+    </div>
+  }
+</nav>

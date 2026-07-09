@@ -1,0 +1,71 @@
+// Glass morphism components
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
+}
+
+.glass-overlay-dark {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+// Button styles
+.btn-primary {
+  background-color: #fa5409;
+  color: #ffffff;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #e04b08;
+    transform: scale(1.02);
+  }
+}
+
+.btn-secondary-glass {
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  color: #111c2d;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(15px);
+  }
+}
+
+// Input ghost style
+.input-ghost {
+  background-color: #f2f4f7;
+  border: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid #fa5409;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+}
+
+// Scrollbar utility
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

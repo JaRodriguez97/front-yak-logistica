@@ -1,0 +1,23 @@
+{
+  "name": "YAK Soluciones Logísticas",
+  "short_name": "YAK",
+  "description": "Especialistas en infraestructura logística industrial: puertas rápidas, plataformas niveladoras, abrigos de muelle y protecciones para operación continua.",
+  "theme_color": "#fa5409",
+  "background_color": "#f9f9ff",
+  "display": "standalone",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+<section
+  class="min-h-screen bg-gradient-to-b from-surface-container-lowest via-surface-container-lowest to-surface-container-low text-on-surface pt-28 pb-20"
+>
+  <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop w-full">
+    <!-- Breadcrumb and Back -->
+    <div class="mb-12 flex items-center justify-between">
+      <a
+        routerLink="/"
+        class="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-hover hover:underline transition-colors group"
+      >
+        <span
+          class="material-symbols-outlined text-lg transition-transform group-hover:-translate-x-1"
+          >arrow_back</span
+        >
+        Volver al inicio
+      </a>
+      <span
+        class="text-xs uppercase tracking-widest bg-surface-container-high px-4 py-1.5 rounded-full font-bold text-primary"
+      >
+        Referencias
+      </span>
+    </div>
+
+    <!-- Header Section -->
+    <div class="max-w-3xl text-left mb-16 animate-fade-in">
+      <h1
+        class="text-4xl md:text-5xl font-bold mb-6 font-headline-xl text-on-surface tracking-tight leading-tight"
+      >
+        Casos de Éxito
+      </h1>
+      <p
+        class="font-body-lg text-lg md:text-xl text-on-surface-variant leading-relaxed text-wrap"
+      >
+        Conoce de primera mano cómo optimizamos los accesos, la cadena de frío, la continuidad operativa y la seguridad en las principales plantas e instalaciones industriales del país.
+      </p>
+    </div>
+
+    <!-- Bento Grid Cases List -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      @for (caso of casos; track caso.slug; let i = $index) {
+        <a
+          [routerLink]="['/casos-exito', caso.slug]"
+          class="group relative rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer flex flex-col justify-end min-h-[360px] p-8 border border-white/20"
+          [class.md:col-span-2]="i === 0 || i === 3"
+          [class.md:col-span-1]="i === 1 || i === 2"
+          [class.md:col-span-3]="i === 4"
+          appScrollReveal
+          [class.reveal-on-scroll]="true"
+          [class.animation-delay-100]="i === 0"
+          [class.animation-delay-200]="i === 1"
+          [class.animation-delay-300]="i === 2"
+          [class.animation-delay-400]="i === 3"
+          [class.animation-delay-500]="i === 4"
+        >
+          <!-- Background Image -->
+          <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
+            <img
+              [src]="getFeaturedImage(caso)"
+              [alt]="caso.title"
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+            />
+          </div>
+
+          <!-- Content -->
+          <div class="relative z-20 flex flex-col h-full justify-end text-white">
+            <span class="text-xs uppercase tracking-widest text-primary font-bold mb-2">
+              {{ caso.industry }}
+            </span>
+            <h2 class="font-headline-lg text-2xl md:text-3xl font-bold mb-2 tracking-tight">
+              {{ caso.title }}
+            </h2>
+            <p class="font-body-md text-sm text-gray-200 line-clamp-2 max-w-xl transition-colors duration-300 group-hover:text-white">
+              {{ caso.description }}
+            </p>
+            
+            <!-- Hover Button Effect -->
+            <div class="mt-4 flex items-center gap-2 text-primary font-bold text-sm transform translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+              Ver galería de fotos y videos
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </div>
+          </div>
+        </a>
+      }
+    </div>
+  </div>
+</section>

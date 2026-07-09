@@ -1,0 +1,214 @@
+<section
+  class="min-h-screen bg-gradient-to-b from-surface-container-lowest via-surface-container-lowest to-surface-container-low text-on-surface pt-28 pb-20"
+>
+  @if (caso) {
+    <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop w-full">
+      <!-- Breadcrumb and Back -->
+      <div class="mb-12 flex items-center justify-between animate-fade-in">
+        <a
+          routerLink="/casos-exito"
+          class="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-hover hover:underline transition-colors group"
+        >
+          <span
+            class="material-symbols-outlined text-lg transition-transform group-hover:-translate-x-1"
+            >arrow_back</span
+          >
+          Volver a Casos de Éxito
+        </a>
+        <span
+          class="text-xs uppercase tracking-widest bg-surface-container-high px-4 py-1.5 rounded-full font-bold text-primary"
+        >
+          Galería de Medios
+        </span>
+      </div>
+
+      <!-- Header Section -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mb-16 animate-fade-in">
+        <!-- Text content (Left 8 cols) -->
+        <div class="lg:col-span-8 text-left">
+          <span class="text-sm uppercase tracking-wider text-primary font-bold block mb-2">
+            {{ caso.industry }}
+          </span>
+          <h1
+            class="text-4xl md:text-5xl font-bold mb-6 font-headline-xl text-on-surface tracking-tight leading-tight"
+          >
+            {{ caso.title }}
+          </h1>
+          <p
+            class="font-body-lg text-lg md:text-xl text-on-surface-variant leading-relaxed text-wrap"
+          >
+            {{ caso.description }}
+          </p>
+        </div>
+
+        <!-- Metadata Sidebar (Right 4 cols) -->
+        <div class="lg:col-span-4 bg-surface-container-low p-6 rounded-2xl border border-outline-variant w-full">
+          <h3 class="font-headline-md text-lg font-bold mb-4 text-on-surface">Detalles del Proyecto</h3>
+          <ul class="space-y-3 font-body-md text-sm text-on-surface-variant">
+            <li class="flex justify-between border-b border-outline-variant pb-2">
+              <span class="font-medium text-gray-500">Cliente:</span>
+              <span class="font-bold text-on-surface">{{ caso.client }}</span>
+            </li>
+            <li class="flex justify-between border-b border-outline-variant pb-2">
+              <span class="font-medium text-gray-500">Industria:</span>
+              <span class="font-bold text-on-surface">{{ caso.industry }}</span>
+            </li>
+            @if (caso.problem) {
+              <li class="flex flex-col border-b border-outline-variant pb-2 gap-1 text-left">
+                <span class="font-medium text-gray-500">Problema:</span>
+                <span class="font-bold text-error">{{ caso.problem }}</span>
+              </li>
+            }
+            <li class="flex flex-col gap-1 text-left pb-1">
+              <span class="font-medium text-gray-500">Solución:</span>
+              <span class="font-bold text-primary">{{ caso.solution }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bento Grid Gallery -->
+      <div class="grid grid-cols-1 md:grid-cols-3 auto-rows-[240px] gap-6">
+        @for (item of caso.media; track item.url; let idx = $index) {
+          <div
+            (click)="openLightbox(idx)"
+            class="group relative rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer border border-outline-variant bg-surface-container-high"
+            [class.md:col-span-2]="idx % 6 === 0 || idx % 6 === 3"
+            [class.md:row-span-2]="idx % 6 === 0 || idx % 6 === 2"
+            [class.md:col-span-1]="idx % 6 === 1 || idx % 6 === 2 || idx % 6 === 4 || idx % 6 === 5"
+            [class.md:row-span-1]="idx % 6 === 1 || idx % 6 === 3 || idx % 6 === 4 || idx % 6 === 5"
+          >
+            <!-- Media content -->
+            @if (item.type === 'video') {
+              <video
+                [src]="item.url"
+                autoplay
+                muted
+                loop
+                playsinline
+                class="w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-105"
+              ></video>
+              <!-- Video Badge indicator -->
+              <div class="absolute top-4 left-4 z-20 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1.5 text-[10px] uppercase font-bold tracking-wider text-white">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                Video
+              </div>
+            } @else {
+              <img
+                [src]="item.url"
+                [alt]="item.alt"
+                loading="lazy"
+                class="w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-105"
+              />
+            }
+
+            <!-- Hover overlay -->
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center">
+              <div class="w-12 h-12 bg-white/20 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center transform scale-75 group-hover:scale-100 transition-transform duration-300">
+                <span class="material-symbols-outlined text-white text-2xl">
+                  {{ item.type === 'video' ? 'play_arrow' : 'zoom_in' }}
+                </span>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  } @else {
+    <div class="max-w-md mx-auto text-center py-20">
+      <p class="text-lg text-on-surface-variant mb-6">El caso de éxito solicitado no existe.</p>
+      <a routerLink="/casos-exito" class="btn-primary px-6 py-3 rounded-full uppercase font-bold text-sm tracking-wider">
+        Ver todos los casos
+      </a>
+    </div>
+  }
+
+  <!-- Lightbox Modal Overlay -->
+  @if (activeMediaIndex() !== null) {
+    <div
+      (click)="closeLightbox()"
+      (wheel)="onZoomWheel($event)"
+      class="fixed inset-0 z-50 bg-black/95 backdrop-blur-lg flex items-center justify-center p-4 transition-all duration-300"
+    >
+      <!-- Navigation controls (only shown when not zoomed) -->
+      @if (zoomLevel() === 1) {
+        <button
+          (click)="prevLightbox($event)"
+          class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white flex items-center justify-center focus:outline-none z-30 transition-colors"
+          aria-label="Anterior"
+        >
+          <span class="material-symbols-outlined text-2xl">chevron_left</span>
+        </button>
+
+        <button
+          (click)="nextLightbox($event)"
+          class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white flex items-center justify-center focus:outline-none z-30 transition-colors"
+          aria-label="Siguiente"
+        >
+          <span class="material-symbols-outlined text-2xl">chevron_right</span>
+        </button>
+      }
+
+      <!-- Close button -->
+      <button
+        (click)="closeLightbox()"
+        class="absolute top-4 right-4 md:top-8 md:right-8 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white flex items-center justify-center focus:outline-none z-30 transition-colors"
+        aria-label="Cerrar"
+      >
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+
+      <!-- Zoom indicator/help tag (Only for images) -->
+      @if (getActiveMedia()?.type === 'image') {
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 bg-black/60 backdrop-blur-md px-4 py-2 rounded-full text-xs font-semibold text-white/90 select-none pointer-events-none flex items-center gap-2">
+          <span class="material-symbols-outlined text-sm">zoom_in</span>
+          <span>Doble click para zoom. Usa scroll o arrastra la imagen. Zoom: {{ zoomLevel().toFixed(1) }}x</span>
+        </div>
+      }
+
+      <!-- Media Wrapper -->
+      <div
+        (click)="$event.stopPropagation()"
+        class="relative max-w-5xl max-h-[85vh] w-full h-full flex items-center justify-center overflow-hidden"
+      >
+        @if (getActiveMedia()?.type === 'video') {
+          <video
+            [src]="getActiveMedia()?.url"
+            controls
+            autoplay
+            loop
+            class="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl border border-white/10"
+          ></video>
+        } @else {
+          <img
+            [src]="getActiveMedia()?.url"
+            [alt]="getActiveMedia()?.alt"
+            (mousedown)="onPanStart($event)"
+            (mousemove)="onPanMove($event)"
+            (mouseup)="onPanEnd()"
+            (mouseleave)="onPanEnd()"
+            (touchstart)="onPanStart($event)"
+            (touchmove)="onPanMove($event)"
+            (touchend)="onPanEnd()"
+            (dblclick)="toggleZoom($event)"
+            [style.transform]="'translate(' + panX() + 'px, ' + panY() + 'px) scale(' + zoomLevel() + ')'"
+            class="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl border border-white/10 select-none origin-center"
+            [class.cursor-zoom-in]="zoomLevel() === 1"
+            [class.cursor-grab]="zoomLevel() > 1 && !isDragging"
+            [class.cursor-grabbing]="zoomLevel() > 1 && isDragging"
+            [class.transition-transform]="!isDragging"
+            [class.duration-300]="!isDragging"
+            [class.transition-none]="isDragging"
+          />
+        }
+
+        <!-- Caption (Only shown when not zoomed to prevent overlaps) -->
+        @if (zoomLevel() === 1) {
+          <div class="absolute bottom-4 left-0 right-0 text-center text-white/80 font-body-md text-sm px-4">
+            {{ getActiveMedia()?.alt }}
+          </div>
+        }
+      </div>
+    </div>
+  }
+</section>

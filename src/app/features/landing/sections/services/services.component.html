@@ -1,0 +1,216 @@
+<!-- Portafolio de Soluciones (Bento Grid) -->
+<section id="services" class="py-24 bg-surface-container-lowest">
+  <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop">
+
+    <div appScrollReveal class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
+      <h2 class="font-headline-lg text-headline-lg md:text-[40px] text-on-surface mb-4">
+        Portafolio de Soluciones
+      </h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant">
+        Soluciones industriales de acceso y protección diseñadas para integrarse al flujo real de tu operación.
+      </p>
+    </div>
+
+    <!-- Bento Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-12 auto-rows-[320px] gap-bento-gap">
+
+      <!-- 1. Puertas Rápidas (Large/Hero block) -->
+      <a
+        [routerLink]="'/puertas-rapidas'"
+        appScrollReveal
+        class="md:col-span-8 row-span-2 relative rounded-3xl overflow-hidden group shadow-sm hover:shadow-xl transition-shadow duration-500 reveal-on-scroll"
+      >
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent z-10"></div>
+        <img
+          src="assets/images/puertas-rapidas/Imagen17.png"
+          alt="Puerta rápida industrial enrollable de alta velocidad YAK Logística"
+          loading="lazy"
+          class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 z-20 p-8 flex flex-col justify-end">
+          <div appScrollReveal class="glass-card inline-block px-4 py-2 rounded-full font-label-sm text-xs font-bold uppercase tracking-wider text-primary w-max mb-4 reveal-on-scroll animation-delay-100">
+            Alta Velocidad
+          </div>
+          <h3 appScrollReveal class="font-headline-lg text-white mb-2 reveal-on-scroll animation-delay-200">Puertas Rápidas Industriales</h3>
+          <p appScrollReveal class="font-body-lg text-gray-200 max-w-xl mb-6 reveal-on-scroll animation-delay-300">
+            Control térmico excepcional y flujo de tráfico ininterrumpido. Apertura de hasta 2.5 m/s ideal para zonas de alto tránsito.
+          </p>
+          <span appScrollReveal class="btn-primary w-max px-6 py-3 rounded-full font-label-sm text-sm font-semibold flex items-center gap-2 group-hover:bg-primary-hover transition-colors reveal-on-scroll animation-delay-400">
+            Ver Ficha Técnica
+            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">arrow_forward</span>
+          </span>
+        </div>
+      </a>
+
+      <!-- 2. Plataformas Niveladoras (Tall block) -->
+      <a
+        [routerLink]="'/plataformas-niveladoras'"
+        appScrollReveal
+        class="md:col-span-4 row-span-2 relative rounded-3xl overflow-hidden group shadow-sm hover:shadow-xl transition-shadow duration-500 reveal-on-scroll animation-delay-100"
+      >
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent z-10"></div>
+        <img
+          src="assets/images/plataformas-niveladoras/Imagen25.jpg"
+          alt="Plataforma niveladora hidráulica de carga para muelles industriales YAK Logística"
+          loading="lazy"
+          class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 z-20 p-8 flex flex-col justify-end">
+          <h3 appScrollReveal class="font-headline-md text-white mb-2 reveal-on-scroll animation-delay-200">Plataformas Niveladoras</h3>
+          <p appScrollReveal class="font-body-md text-gray-300 mb-6 reveal-on-scroll animation-delay-300">
+            El eslabón seguro entre tu andén y el vehículo. Sistemas hidráulicos de alta capacidad de carga estática y dinámica.
+          </p>
+          <span appScrollReveal class="text-primary group-hover:text-white transition-colors font-label-sm flex items-center gap-1 w-max reveal-on-scroll animation-delay-400">
+            Ver Especificaciones
+            <span class="material-symbols-outlined text-sm">chevron_right</span>
+          </span>
+        </div>
+      </a>
+
+      <!-- 3. Abrigos de Muelle (Small block) -->
+      <a
+        [routerLink]="'/abrigos'"
+        appScrollReveal
+        class="md:col-span-4 row-span-1 relative rounded-3xl overflow-hidden group shadow-sm hover:shadow-xl transition-shadow duration-500 reveal-on-scroll animation-delay-200"
+      >
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent z-10"></div>
+        <img
+          src="assets/images/abrigos/lona/Imagen53.png"
+          alt="Abrigo de muelle de carga industrial sellando la parte trasera de un camión"
+          loading="lazy"
+          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        <div class="absolute inset-0 z-20 p-6 flex flex-col justify-end">
+          <h3 appScrollReveal class="font-headline-md text-lg text-white mb-1 reveal-on-scroll animation-delay-300">Abrigos de Muelle</h3>
+          <span appScrollReveal class="font-body-md text-sm text-gray-300 group-hover:text-primary transition-colors flex items-center gap-1 reveal-on-scroll animation-delay-400">
+            Ver sub-página de producto
+            <span class="material-symbols-outlined text-xs">chevron_right</span>
+          </span>
+        </div>
+      </a>
+
+      <!-- 4. Puertas Seccionales (Small block) -->
+      <a
+        [routerLink]="'/puertas-seccionales'"
+        appScrollReveal
+        class="md:col-span-4 row-span-1 relative rounded-3xl overflow-hidden group shadow-sm hover:shadow-xl transition-shadow duration-500 reveal-on-scroll animation-delay-300"
+      >
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent z-10"></div>
+        <img
+          src="assets/images/puertas-seccionales/Imagen39.jpg"
+          alt="Puerta seccional industrial de paneles aislados para bodega"
+          loading="lazy"
+          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        <div class="absolute inset-0 z-20 p-6 flex flex-col justify-end">
+          <h3 appScrollReveal class="font-headline-md text-lg text-white mb-1 reveal-on-scroll animation-delay-400">Puertas Seccionales</h3>
+          <span appScrollReveal class="font-body-md text-sm text-gray-300 group-hover:text-primary transition-colors flex items-center gap-1 reveal-on-scroll animation-delay-500">
+            Ver sub-página de producto
+            <span class="material-symbols-outlined text-xs">chevron_right</span>
+          </span>
+        </div>
+      </a>
+
+      <!-- 5. Docking Before Opening (DOBO) (Small block) -->
+      <a
+        [routerLink]="'/docking-before-opening'"
+        appScrollReveal
+        class="md:col-span-4 row-span-1 relative rounded-3xl overflow-hidden group shadow-sm hover:shadow-xl transition-shadow duration-500 reveal-on-scroll animation-delay-400"
+      >
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent z-10"></div>
+        <img
+          src="assets/images/DOBO/Imagen87.png"
+          alt="Sistema de acoplamiento seguro DOBO (Docking Before Opening) en muelle de carga YAK Logística"
+          loading="lazy"
+          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        <div class="absolute inset-0 z-20 p-6 flex flex-col justify-end">
+          <h3 appScrollReveal class="font-headline-md text-lg text-white mb-1 reveal-on-scroll animation-delay-500">Docking Before Opening</h3>
+          <span appScrollReveal class="font-body-md text-sm text-gray-300 group-hover:text-primary transition-colors flex items-center gap-1 reveal-on-scroll animation-delay-600">
+            Ver sub-página de producto
+            <span class="material-symbols-outlined text-xs">chevron_right</span>
+          </span>
+        </div>
+      </a>
+
+      <!-- 6. Protecciones Industriales (Tall block) -->
+      <a
+        [routerLink]="'/protecciones'"
+        appScrollReveal
+        class="md:col-span-4 row-span-2 relative rounded-3xl overflow-hidden group shadow-sm hover:shadow-xl transition-shadow duration-500 reveal-on-scroll animation-delay-500"
+      >
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent z-10"></div>
+        <img
+          src="assets/images/protecciones/Imagen72.png"
+          alt="Protecciones industriales de absorción de impactos y bolardos de seguridad YAK Logística"
+          loading="lazy"
+          class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 z-20 p-8 flex flex-col justify-end">
+          <h3 appScrollReveal class="font-headline-md text-white mb-2 reveal-on-scroll animation-delay-600">Protecciones Industriales</h3>
+          <p appScrollReveal class="font-body-md text-gray-300 mb-6 reveal-on-scroll animation-delay-700">
+            Prevén daños y protege tu inversión. Bolardos y barreras absorbentes de impactos de fácil anclaje.
+          </p>
+          <span appScrollReveal class="text-primary group-hover:text-white transition-colors font-label-sm flex items-center gap-1 w-max reveal-on-scroll animation-delay-800">
+            Ver Especificaciones
+            <span class="material-symbols-outlined text-sm">chevron_right</span>
+          </span>
+        </div>
+      </a>
+
+      <!-- 7. Puertas Especializadas (Large/Hero block) -->
+      <a
+        [routerLink]="'/puertas-especializadas'"
+        appScrollReveal
+        class="md:col-span-8 row-span-2 relative rounded-3xl overflow-hidden group shadow-sm hover:shadow-xl transition-shadow duration-500 reveal-on-scroll animation-delay-600"
+      >
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent z-10"></div>
+        <img
+          src="assets/images/puertas-especializadas/thermicroll/Imagen91.png"
+          alt="Puertas industriales especializadas Thermicroll de alto rendimiento YAK Logística"
+          loading="lazy"
+          class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 z-20 p-8 flex flex-col justify-end">
+          <div appScrollReveal class="glass-card inline-block px-4 py-2 rounded-full font-label-sm text-xs font-bold uppercase tracking-wider text-primary w-max mb-4 reveal-on-scroll animation-delay-700">
+            Ingeniería Avanzada
+          </div>
+          <h3 appScrollReveal class="font-headline-lg text-white mb-2 reveal-on-scroll animation-delay-800">Puertas Especializadas</h3>
+          <p appScrollReveal class="font-body-lg text-gray-200 max-w-xl mb-6 reveal-on-scroll animation-delay-800">
+            Sistemas especiales de alto rendimiento: puertas enrollables aisladas Thermicroll, apilables gigantes Megapack y cortafuegos ATEX certificadas.
+          </p>
+          <span appScrollReveal class="btn-primary w-max px-6 py-3 rounded-full font-label-sm text-sm font-semibold flex items-center gap-2 group-hover:bg-primary-hover transition-colors reveal-on-scroll animation-delay-800">
+            Ver Ficha Técnica
+            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">arrow_forward</span>
+          </span>
+        </div>
+      </a>
+
+      <!-- 8. Loading Houses (Full-width banner block) -->
+      <a
+        [routerLink]="'/loading-houses'"
+        appScrollReveal
+        class="md:col-span-12 row-span-1 relative rounded-3xl overflow-hidden group shadow-sm hover:shadow-xl transition-shadow duration-500 reveal-on-scroll animation-delay-700"
+      >
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent z-10"></div>
+        <img
+          src="assets/images/loading-house/Imagen81.jpg"
+          alt="Muelle de carga externo Loading House y túnel isotérmico industrial YAK Logística"
+          loading="lazy"
+          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 z-20 p-8 flex flex-col justify-end">
+          <h3 appScrollReveal class="font-headline-md text-white mb-2 reveal-on-scroll animation-delay-800">Loading Houses / Túneles Isotérmicos</h3>
+          <p appScrollReveal class="font-body-md text-gray-300 max-w-2xl mb-4 reveal-on-scroll animation-delay-800">
+            Optimiza el espacio interior de tu bodega instalando muelles de carga externos.
+          </p>
+          <span appScrollReveal class="text-primary group-hover:text-white transition-colors font-label-sm flex items-center gap-1 w-max reveal-on-scroll animation-delay-800">
+            Ver Especificaciones
+            <span class="material-symbols-outlined text-sm">chevron_right</span>
+          </span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
