@@ -26,7 +26,7 @@ export class ProductDetailComponent implements OnInit {
   zoomLevel = signal<number>(1);
   panX = signal<number>(0);
   panY = signal<number>(0);
-  private isDragging = false;
+  isDragging = false;
   private startX = 0;
   private startY = 0;
 
