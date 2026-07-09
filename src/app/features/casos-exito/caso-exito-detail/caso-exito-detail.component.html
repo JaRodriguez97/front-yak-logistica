@@ -81,7 +81,7 @@
             <!-- Media content -->
             @if (item.type === 'video') {
               <video
-                [src]="getRelativeUrl(item.url)"
+                [src]="item.url"
                 autoplay
                 muted
                 loop
@@ -95,7 +95,7 @@
               </div>
             } @else {
               <img
-                [src]="getRelativeUrl(item.url)"
+                [src]="item.url"
                 [alt]="item.alt"
                 loading="lazy"
                 class="w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-105"
@@ -173,7 +173,7 @@
       >
         @if (getActiveMedia()?.type === 'video') {
           <video
-            [src]="getRelativeUrl(getActiveMedia()?.url)"
+            [src]="getActiveMedia()?.url"
             controls
             autoplay
             loop
@@ -181,7 +181,7 @@
           ></video>
         } @else {
           <img
-            [src]="getRelativeUrl(getActiveMedia()?.url)"
+            [src]="getActiveMedia()?.url"
             [alt]="getActiveMedia()?.alt"
             (mousedown)="onPanStart($event)"
             (mousemove)="onPanMove($event)"

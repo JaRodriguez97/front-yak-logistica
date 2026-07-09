@@ -66,7 +66,7 @@ export class CasosExitoDataService {
     for (let i = 1; i <= 13; i++) {
       list.push({
         type: 'image',
-        url: `assets/images/casos-exito/AGROSAN/Imagen200 (${i}).jpg`,
+        url: `../../../assets/images/casos-exito/AGROSAN/agrosan-${i}.jpg`,
         alt: `Instalación AGROSAN - Detalle de implementación YAK Logística #${i}`
       });
     }
@@ -77,19 +77,19 @@ export class CasosExitoDataService {
     const list: CasoExitoMedia[] = [
       {
         type: 'video',
-        url: 'assets/images/casos-exito/BAXTER/Imagen 300 (1).mp4',
+        url: '../../../assets/images/casos-exito/BAXTER/baxter-1.mp4',
         alt: 'Funcionamiento de puertas rápidas industriales Baxter YAK Logística'
       },
       {
         type: 'video',
-        url: 'assets/images/casos-exito/BAXTER/Imagen 300 (2).mp4',
+        url: '../../../assets/images/casos-exito/BAXTER/baxter-2.mp4',
         alt: 'Operación continua en andén de carga Baxter YAK Logística'
       }
     ];
     for (let i = 1; i <= 4; i++) {
       list.push({
         type: 'image',
-        url: `assets/images/casos-exito/BAXTER/Imagen 300 (${i}).jpeg`,
+        url: `../../../assets/images/casos-exito/BAXTER/baxter-${i}.jpeg`,
         alt: `Infraestructura Baxter - Proyecto YAK Logística #${i}`
       });
     }
@@ -101,7 +101,7 @@ export class CasosExitoDataService {
     for (let i = 1; i <= 21; i++) {
       list.push({
         type: 'image',
-        url: `assets/images/casos-exito/CARGILL/Imagen 400 (${i}).jpeg`,
+        url: `../../../assets/images/casos-exito/CARGILL/cargill-${i}.jpeg`,
         alt: `Muelles de carga Cargill - Proyecto YAK Logística #${i}`
       });
     }
@@ -112,14 +112,14 @@ export class CasosExitoDataService {
     const list: CasoExitoMedia[] = [
       {
         type: 'video',
-        url: 'assets/images/casos-exito/ICE-STAR/Imagen 500 (1).mp4',
+        url: '../../../assets/images/casos-exito/ICE-STAR/ice-star-1.mp4',
         alt: 'Automatización y sellado térmico Ice Star YAK Logística'
       }
     ];
     for (let i = 1; i <= 5; i++) {
       list.push({
         type: 'image',
-        url: `assets/images/casos-exito/ICE-STAR/Imagen 500 (${i}).jpeg`,
+        url: `../../../assets/images/casos-exito/ICE-STAR/ice-star-${i}.jpeg`,
         alt: `Cadena de frío Ice Star - Proyecto YAK Logística #${i}`
       });
     }
@@ -130,23 +130,23 @@ export class CasosExitoDataService {
     return [
       {
         type: 'image',
-        url: 'assets/images/casos-exito/RECAMIER/WhatsApp Image 2024-07-03 at 3.14.45 PM.jpeg',
+        url: '../../../assets/images/casos-exito/RECAMIER/recamier-1.jpeg',
         alt: 'Área de distribución Recamier YAK Logística - Vista de accesos'
       },
       {
         type: 'image',
-        url: 'assets/images/casos-exito/RECAMIER/WhatsApp Image 2024-07-03 at 3.14.46 PM.jpeg',
-        alt: 'Puertas industriales instaladas en andenes de carga Recamier YAK Logística'
-      },
-      {
-        type: 'image',
-        url: 'assets/images/casos-exito/RECAMIER/WhatsApp Image 2024-07-03 at 3.14.46 PM (2).jpeg',
+        url: '../../../assets/images/casos-exito/RECAMIER/recamier-2.jpeg',
         alt: 'Sistemas de seguridad y rampa niveladora Recamier YAK Logística'
       },
       {
         type: 'image',
-        url: 'assets/images/casos-exito/RECAMIER/WhatsApp Image 2024-07-03 at 3.14.46 PM (3).jpeg',
+        url: '../../../assets/images/casos-exito/RECAMIER/recamier-3.jpeg',
         alt: 'Detalle de implementación en andén de distribución Recamier YAK Logística'
+      },
+      {
+        type: 'image',
+        url: '../../../assets/images/casos-exito/RECAMIER/recamier-4.jpeg',
+        alt: 'Puertas industriales instaladas en andenes de carga Recamier YAK Logística'
       }
     ];
   }

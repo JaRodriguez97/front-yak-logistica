@@ -19,11 +19,6 @@ export class CasoExitoDetailComponent implements OnInit {
   caso: CasoExito | undefined;
   activeMediaIndex = signal<number | null>(null);
 
-  getRelativeUrl(url?: string): string {
-    if (!url) return '';
-    return '../../' + (url.startsWith('/') ? url.substring(1) : url);
-  }
-
   // Zoom & Pan states
   zoomLevel = signal<number>(1);
   panX = signal<number>(0);
