@@ -147,8 +147,8 @@ export class ProductDetailComponent implements OnInit {
 
   getImageUrl(path?: string): string {
     if (!path) return '';
-    if (path.startsWith('assets/')) return path;
-    return 'assets/images/' + (path.split('/').pop() ?? '');
+    if (path.startsWith('assets/')) return '/' + path;
+    return '/assets/images/' + (path.split('/').pop() ?? '');
   }
 
   getActiveSubCategory(): SubCategory | undefined {
