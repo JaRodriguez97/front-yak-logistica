@@ -1,5 +1,5 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { DataService } from '../../core/services/data.service';
 import { SeoService } from '../../core/services/seo.service';
@@ -15,6 +15,7 @@ const BASE_URL = 'https://yaklogistica.com';
 })
 export class ProductDetailComponent implements OnInit {
   private readonly route = inject(ActivatedRoute);
+  private readonly router = inject(Router);
   private readonly data = inject(DataService);
   private readonly seo = inject(SeoService);
 
@@ -147,8 +148,17 @@ export class ProductDetailComponent implements OnInit {
 
   getImageUrl(path?: string): string {
     if (!path) return '';
-    if (path.startsWith('assets/')) return '/' + path;
-    return '/assets/images/' + (path.split('/').pop() ?? '');
+    const cleanPath = path.startsWith('/') ? path.substring(1) : path;
+    
+    // Get depth dynamically from the router URL
+    const url = this.router.url.split('?')[0].split('#')[0];
+    const depth = url.split('/').filter(s => s.length > 0).length;
+    const prefix = '../'.repeat(depth) || './';
+    
+    if (cleanPath.startsWith('assets/')) {
+      return prefix + cleanPath;
+    }
+    return prefix + 'assets/images/' + (cleanPath.split('/').pop() ?? '');
   }
 
   getActiveSubCategory(): SubCategory | undefined {

@@ -33,10 +33,12 @@ export class CasosExitoComponent implements OnInit {
     if (firstMedia) {
       if (firstMedia.type === 'video') {
         const firstImg = caso.media.find((m) => m.type === 'image');
-        return firstImg ? firstImg.url : '/assets/images/bg.jpg';
+        const url = firstImg ? firstImg.url : 'assets/images/bg.jpg';
+        return '../' + (url.startsWith('/') ? url.substring(1) : url);
       }
-      return firstMedia.url;
+      const url = firstMedia.url;
+      return '../' + (url.startsWith('/') ? url.substring(1) : url);
     }
-    return '/assets/images/bg.jpg';
+    return '../assets/images/bg.jpg';
   }
 }
