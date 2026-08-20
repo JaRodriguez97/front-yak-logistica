@@ -109,7 +109,7 @@ export class CasosExitoDataService {
       const idxStr = i.toString().padStart(2, '0');
       list.push({
         type: 'image',
-        url: `assets/images/casos-exito/agrosan/agrosan-${idxStr}.png`,
+        url: `../../../assets/images/casos-exito/agrosan/agrosan-${idxStr}.png`,
         alt: `Instalación AGROSAN - Detalle de implementación YAK Logística #${i}`,
       });
     }
@@ -120,32 +120,32 @@ export class CasosExitoDataService {
     return [
       {
         type: 'image',
-        url: 'assets/images/casos-exito/baxter/baxter-01.jpeg',
+        url: '../../../assets/images/casos-exito/baxter/baxter-01.jpeg',
         alt: 'Infraestructura Baxter - Proyecto YAK Logística #1',
       },
       {
         type: 'video',
-        url: 'assets/images/casos-exito/baxter/baxter-02.mp4',
+        url: '../../../assets/images/casos-exito/baxter/baxter-02.mp4',
         alt: 'Funcionamiento de puertas rápidas industriales Baxter YAK Logística',
       },
       {
         type: 'image',
-        url: 'assets/images/casos-exito/baxter/baxter-03.jpeg',
+        url: '../../../assets/images/casos-exito/baxter/baxter-03.jpeg',
         alt: 'Infraestructura Baxter - Proyecto YAK Logística #2',
       },
       {
         type: 'video',
-        url: 'assets/images/casos-exito/baxter/baxter-04.mp4',
+        url: '../../../assets/images/casos-exito/baxter/baxter-04.mp4',
         alt: 'Operación continua en andén de carga Baxter YAK Logística',
       },
       {
         type: 'image',
-        url: 'assets/images/casos-exito/baxter/baxter-05.jpeg',
+        url: '../../../assets/images/casos-exito/baxter/baxter-05.jpeg',
         alt: 'Infraestructura Baxter - Proyecto YAK Logística #3',
       },
       {
         type: 'image',
-        url: 'assets/images/casos-exito/baxter/baxter-06.jpeg',
+        url: '../../../assets/images/casos-exito/baxter/baxter-06.jpeg',
         alt: 'Infraestructura Baxter - Proyecto YAK Logística #4',
       },
     ];
@@ -157,7 +157,7 @@ export class CasosExitoDataService {
       const idxStr = i.toString().padStart(2, '0');
       list.push({
         type: 'image',
-        url: `assets/images/casos-exito/cargill/cargill-${idxStr}.jpeg`,
+        url: `../../../assets/images/casos-exito/cargill/cargill-${idxStr}.jpeg`,
         alt: `Muelles de carga Cargill - Proyecto YAK Logística #${i}`,
       });
     }
@@ -168,32 +168,32 @@ export class CasosExitoDataService {
     return [
       {
         type: 'image',
-        url: 'assets/images/casos-exito/ice-star/ice-star-01.jpeg',
+        url: '../../../assets/images/casos-exito/ice-star/ice-star-01.jpeg',
         alt: 'Cadena de frío Ice Star - Proyecto YAK Logística #1',
       },
       {
         type: 'video',
-        url: 'assets/images/casos-exito/ice-star/ice-star-02.mp4',
+        url: '../../../assets/images/casos-exito/ice-star/ice-star-02.mp4',
         alt: 'Automatización y sellado térmico Ice Star YAK Logística',
       },
       {
         type: 'image',
-        url: 'assets/images/casos-exito/ice-star/ice-star-03.jpeg',
+        url: '../../../assets/images/casos-exito/ice-star/ice-star-03.jpeg',
         alt: 'Cadena de frío Ice Star - Proyecto YAK Logística #2',
       },
       {
         type: 'image',
-        url: 'assets/images/casos-exito/ice-star/ice-star-04.jpeg',
+        url: '../../../assets/images/casos-exito/ice-star/ice-star-04.jpeg',
         alt: 'Cadena de frío Ice Star - Proyecto YAK Logística #3',
       },
       {
         type: 'image',
-        url: 'assets/images/casos-exito/ice-star/ice-star-05.jpeg',
+        url: '../../../assets/images/casos-exito/ice-star/ice-star-05.jpeg',
         alt: 'Cadena de frío Ice Star - Proyecto YAK Logística #4',
       },
       {
         type: 'image',
-        url: 'assets/images/casos-exito/ice-star/ice-star-06.jpeg',
+        url: '../../../assets/images/casos-exito/ice-star/ice-star-06.jpeg',
         alt: 'Cadena de frío Ice Star - Proyecto YAK Logística #5',
       },
     ];
@@ -203,22 +203,22 @@ export class CasosExitoDataService {
     return [
       {
         type: 'image',
-        url: 'assets/images/casos-exito/recamier/recamier-01.jpeg',
+        url: '../../../assets/images/casos-exito/recamier/recamier-01.jpeg',
         alt: 'Área de distribución Recamier YAK Logística - Vista de accesos',
       },
       {
         type: 'image',
-        url: 'assets/images/casos-exito/recamier/recamier-02.jpeg',
+        url: '../../../assets/images/casos-exito/recamier/recamier-02.jpeg',
         alt: 'Sistemas de seguridad y rampa niveladora Recamier YAK Logística',
       },
       {
         type: 'image',
-        url: 'assets/images/casos-exito/recamier/recamier-03.jpeg',
+        url: '../../../assets/images/casos-exito/recamier/recamier-03.jpeg',
         alt: 'Detalle de implementación en andén de distribución Recamier YAK Logística',
       },
       {
         type: 'image',
-        url: 'assets/images/casos-exito/recamier/recamier-04.jpeg',
+        url: '../../../assets/images/casos-exito/recamier/recamier-04.jpeg',
         alt: 'Puertas industriales instaladas en andenes de carga Recamier YAK Logística',
       },
     ];
@@ -228,37 +228,37 @@ export class CasosExitoDataService {
     return [
       {
         type: 'image',
-        url: 'assets/images/casos-exito/calypso-cartagena/caso-exito-calypso-01.png',
+        url: '../../../assets/images/casos-exito/calypso-cartagena/caso-exito-calypso-01.png',
         alt: 'Proyecto Calypso Cartagena - Vista de accesos',
       },
       {
         type: 'image',
-        url: 'assets/images/casos-exito/calypso-cartagena/caso-exito-calypso-02.png',
+        url: '../../../assets/images/casos-exito/calypso-cartagena/caso-exito-calypso-02.png',
         alt: 'Proyecto Calypso Cartagena - Instalación de puertas rápidas',
       },
       {
         type: 'image',
-        url: 'assets/images/casos-exito/calypso-cartagena/caso-exito-calypso-03.png',
+        url: '../../../assets/images/casos-exito/calypso-cartagena/caso-exito-calypso-03.png',
         alt: 'Proyecto Calypso Cartagena - Sellado de muelles',
       },
       {
         type: 'image',
-        url: 'assets/images/casos-exito/calypso-cartagena/caso-exito-calypso-04.png',
+        url: '../../../assets/images/casos-exito/calypso-cartagena/caso-exito-calypso-04.png',
         alt: 'Proyecto Calypso Cartagena - Operación logística',
       },
       {
         type: 'image',
-        url: 'assets/images/casos-exito/calypso-cartagena/caso-exito-calypso-05.jpeg',
+        url: '../../../assets/images/casos-exito/calypso-cartagena/caso-exito-calypso-05.jpeg',
         alt: 'Proyecto Calypso Cartagena - Vista exterior de andenes',
       },
       {
         type: 'image',
-        url: 'assets/images/casos-exito/calypso-cartagena/caso-exito-calypso-06.jpeg',
+        url: '../../../assets/images/casos-exito/calypso-cartagena/caso-exito-calypso-06.jpeg',
         alt: 'Proyecto Calypso Cartagena - Detalle de andén de carga',
       },
       {
         type: 'image',
-        url: 'assets/images/casos-exito/calypso-cartagena/caso-exito-calypso-07.jpeg',
+        url: '../../../assets/images/casos-exito/calypso-cartagena/caso-exito-calypso-07.jpeg',
         alt: 'Proyecto Calypso Cartagena - Control de temperatura',
       },
     ];
@@ -268,42 +268,42 @@ export class CasosExitoDataService {
     return [
       {
         type: 'image',
-        url: 'assets/images/casos-exito/colombina-itagui/caso-exito-colombina-01.png',
+        url: '../../../assets/images/casos-exito/colombina-itagui/caso-exito-colombina-01.png',
         alt: 'Proyecto Colombina Itagüí - Vista de andenes',
       },
       {
         type: 'image',
-        url: 'assets/images/casos-exito/colombina-itagui/caso-exito-colombina-02.png',
+        url: '../../../assets/images/casos-exito/colombina-itagui/caso-exito-colombina-02.png',
         alt: 'Proyecto Colombina Itagüí - Instalación YAK Logística',
       },
       {
         type: 'image',
-        url: 'assets/images/casos-exito/colombina-itagui/caso-exito-colombina-03.png',
+        url: '../../../assets/images/casos-exito/colombina-itagui/caso-exito-colombina-03.png',
         alt: 'Proyecto Colombina Itagüí - Puertas seccionales',
       },
       {
         type: 'image',
-        url: 'assets/images/casos-exito/colombina-itagui/caso-exito-colombina-04.png',
+        url: '../../../assets/images/casos-exito/colombina-itagui/caso-exito-colombina-04.png',
         alt: 'Proyecto Colombina Itagüí - Sellado hermético',
       },
       {
         type: 'image',
-        url: 'assets/images/casos-exito/colombina-itagui/caso-exito-colombina-05.jpg',
+        url: '../../../assets/images/casos-exito/colombina-itagui/caso-exito-colombina-05.jpg',
         alt: 'Proyecto Colombina Itagüí - Rampa niveladora en operación',
       },
       {
         type: 'image',
-        url: 'assets/images/casos-exito/colombina-itagui/caso-exito-colombina-06.png',
+        url: '../../../assets/images/casos-exito/colombina-itagui/caso-exito-colombina-06.png',
         alt: 'Proyecto Colombina Itagüí - Detalle de acoplamiento',
       },
       {
         type: 'image',
-        url: 'assets/images/casos-exito/colombina-itagui/caso-exito-colombina-07.png',
+        url: '../../../assets/images/casos-exito/colombina-itagui/caso-exito-colombina-07.png',
         alt: 'Proyecto Colombina Itagüí - Andenes de distribución',
       },
       {
         type: 'image',
-        url: 'assets/images/casos-exito/colombina-itagui/caso-exito-colombina-08.jpg',
+        url: '../../../assets/images/casos-exito/colombina-itagui/caso-exito-colombina-08.jpg',
         alt: 'Proyecto Colombina Itagüí - Control de procesos logísticos',
       },
     ];
@@ -315,7 +315,7 @@ export class CasosExitoDataService {
       const idxStr = i.toString().padStart(2, '0');
       list.push({
         type: 'image',
-        url: `assets/images/casos-exito/jeronimo-martins/caso-exito-jeronimo-${idxStr}.webp`,
+        url: `../../../assets/images/casos-exito/jeronimo-martins/caso-exito-jeronimo-${idxStr}.webp`,
         alt: `Instalación Jerónimo Martins - Solución YAK Logística #${i}`,
       });
     }
