@@ -1,6 +1,5 @@
-// SCSS @use must come BEFORE @tailwind directives
+/* SCSS @use must come BEFORE Tailwind directives */
 @use 'styles/components';
-@use 'styles/hero';
 @use 'styles/animations';
 
 // Tailwind CSS v3 directives

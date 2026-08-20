@@ -3,33 +3,65 @@
     "slide": 6,
     "title": "Puertas Rápidas",
     "content": [
-      "Las puertas rápidas BMP combinan alta velocidad de apertura y cierre con una construcción industrial diseñada para alto número de ciclos, asegurando estabilidad operativa y control ambiental en áreas críticas.",
-      "Su sistema de control y accionamiento está optimizado para minimizar tiempos muertos, reducir el consumo energético y proteger los procesos productivos frente a variaciones de temperatura, polvo y contaminación, especialmente en aplicaciones de refrigeración, congelación y logística intensiva."
+      "Puertas rápidas diseñadas para optimizar el flujo operativo, mejorar la eficiencia y garantizar el control de acceso en entornos industriales y comerciales. Fabricadas con materiales de alta resistencia y adaptadas a las necesidades de cada aplicación, ofrecen soluciones especializadas para los sectores logístico, farmacéutico, de refrigeración y protección contra incendios."
     ],
-    "images": [
-      "assets/images/puertas-rapidas/Imagen2.jpg",
-      "assets/images/puertas-rapidas/Imagen3.jpg",
-      "assets/images/puertas-rapidas/Imagen4.jpg",
-      "assets/images/puertas-rapidas/Imagen5.png",
-      "assets/images/puertas-rapidas/Imagen6.png",
-      "assets/images/puertas-rapidas/Imagen7.jpg",
-      "assets/images/puertas-rapidas/Imagen8.jpg",
-      "assets/images/puertas-rapidas/Imagen9.jpg",
-      "assets/images/puertas-rapidas/Imagen10.jpg",
-      "assets/images/puertas-rapidas/Imagen11.jpg",
-      "assets/images/puertas-rapidas/Imagen12.jpg",
-      "assets/images/puertas-rapidas/Imagen13.jpg",
-      "assets/images/puertas-rapidas/Imagen14.jpg",
-      "assets/images/puertas-rapidas/Imagen15.jpg",
-      "assets/images/puertas-rapidas/Imagen16.jpg",
-      "assets/images/puertas-rapidas/Imagen17.png",
-      "assets/images/puertas-rapidas/Imagen18.jpg",
-      "assets/images/puertas-rapidas/Imagen19.jpg",
-      "assets/images/puertas-rapidas/Imagen20.jpg",
-      "assets/images/puertas-rapidas/Imagen21.jpg",
-      "assets/images/puertas-rapidas/Imagen22.jpg",
-      "assets/images/puertas-rapidas/Imagen23.jpg",
-      "assets/images/puertas-rapidas/Imagen24.jpg"
+    "images": [],
+    "subCategories": [
+      {
+        "title": "Logística",
+        "content": [
+          "Diseñada para optimizar el flujo de mercancías y personas en centros de distribución, bodegas y muelles de carga. Su apertura y cierre de alta velocidad reducen los tiempos de operación, mejoran la seguridad y ayudan a controlar las condiciones del ambiente."
+        ],
+        "images": [
+          "assets/images/puertas-rapidas/logistica/puerta-rapida-logistica-dynamicroll-01.png",
+          "assets/images/puertas-rapidas/logistica/puerta-rapida-logistica-dynamicroll-air-01.png",
+          "assets/images/puertas-rapidas/logistica/puerta-rapida-logistica-dynamicroll-02.png",
+          "assets/images/puertas-rapidas/logistica/puerta-rapida-logistica-dynamicroll-03.png",
+          "assets/images/puertas-rapidas/logistica/puerta-rapida-logistica-dynamicroll-air-02.png",
+          "assets/images/puertas-rapidas/logistica/puerta-rapida-logistica-dynamicroll-04.png",
+          "assets/images/puertas-rapidas/logistica/puerta-rapida-logistica-01.png",
+          "assets/images/puertas-rapidas/logistica/puerta-rapida-logistica-dynamicroll-air-03.png"
+        ]
+      },
+      {
+        "title": "Refrigeración",
+        "content": [
+          "Especialmente desarrollada para cuartos fríos y áreas de temperatura controlada. Minimiza la pérdida de frío, reduce el consumo energético y mantiene las condiciones térmicas necesarias para la conservación de productos."
+        ],
+        "images": [
+          "assets/images/puertas-rapidas/refrigeracion/frigo-1/puerta-rapida-refrigeracion-frigo-1-air-01.png",
+          "assets/images/puertas-rapidas/refrigeracion/frigo-1/puerta-rapida-refrigeracion-frigo-1-01.png",
+          "assets/images/puertas-rapidas/refrigeracion/frigo-1/puerta-rapida-refrigeracion-frigo-1-02.png",
+          "assets/images/puertas-rapidas/refrigeracion/frigo-1/puerta-rapida-refrigeracion-frigo-1-muestra-02.png",
+          "assets/images/puertas-rapidas/refrigeracion/frigo-2/puerta-rapida-refrigeracion-frigo-2-01.png",
+          "assets/images/puertas-rapidas/refrigeracion/frigo-2/puerta-rapida-refrigeracion-frigo-2-02.png",
+          "assets/images/puertas-rapidas/refrigeracion/frigo-2/puerta-rapida-refrigeracion-frigo-2-03.png",
+          "assets/images/puertas-rapidas/refrigeracion/frigo-2-air/puerta-rapida-refrigeracion-frigo-2-air-pintura-electrostacia.png",
+          "assets/images/puertas-rapidas/refrigeracion/frigo-2-air/puerta-rapida-refrigeracion-frigo-2-air-01.png",
+          "assets/images/puertas-rapidas/refrigeracion/frigo-2-air/puerta-rapida-refrigeracion-frigo-2-air-02.png",
+          "assets/images/puertas-rapidas/refrigeracion/frigo-2-air/puerta-rapida-refrigeracion-frigo-2-air-inox.png"
+        ]
+      },
+      {
+        "title": "Fármaco",
+        "content": [
+          "Fabricada para cumplir con los altos estándares de higiene y control ambiental exigidos por la industria farmacéutica y de laboratorios. Favorece la limpieza, limita la contaminación cruzada y contribuye al control de presión y temperatura en áreas críticas."
+        ],
+        "images": [
+          "assets/images/puertas-rapidas/farmaco/puerta-rapida-farmaco-dynamicroll-one-inox.png",
+          "assets/images/puertas-rapidas/farmaco/puerta-rapida-farmaco-dynamicroll-one-galva.png",
+          "assets/images/puertas-rapidas/farmaco/puerta-rapida-farmaco-dynamicroll-one.png"
+        ]
+      },
+      {
+        "title": "Puerta Cortafuego",
+        "content": [
+          "Diseñada para compartimentar áreas y retardar la propagación del fuego y el humo en caso de emergencia. Fabricada bajo altos estándares de seguridad, protege la infraestructura, facilita la evacuación y contribuye al cumplimiento de las normas de protección contra incendios."
+        ],
+        "images": [
+          "assets/images/puertas-rapidas/puerta-cortafuego/puerta-rapida-puerta-cortafuego-de-lona.png"
+        ]
+      }
     ]
   },
   {
@@ -38,21 +70,51 @@
     "content": [
       "Las plataformas niveladoras son soluciones hechas a la medida para compensar la diferencia de altura entre la superficie del camión y el piso de la bodega. De esta forma la mercancía puede cargarse y descargarse con un sólo movimiento horizontal. Las plataformas niveladoras hidráulicas están disponibles tanto en la versión de uña abatible como en la versión de uña retráctil."
     ],
-    "images": [
-      "assets/images/plataformas-niveladoras/Imagen25.jpg",
-      "assets/images/plataformas-niveladoras/Imagen26.jpg",
-      "assets/images/plataformas-niveladoras/Imagen27.jpg",
-      "assets/images/plataformas-niveladoras/Imagen28.jpg",
-      "assets/images/plataformas-niveladoras/Imagen29.jpg",
-      "assets/images/plataformas-niveladoras/Imagen30.jpg",
-      "assets/images/plataformas-niveladoras/Imagen31.jpg",
-      "assets/images/plataformas-niveladoras/Imagen32.jpg",
-      "assets/images/plataformas-niveladoras/Imagen33.png",
-      "assets/images/plataformas-niveladoras/Imagen34.jpg",
-      "assets/images/plataformas-niveladoras/Imagen35.jpg",
-      "assets/images/plataformas-niveladoras/Imagen36.jpg",
-      "assets/images/plataformas-niveladoras/Imagen37.jpg",
-      "assets/images/plataformas-niveladoras/Imagen38.jpg"
+    "images": [],
+    "subCategories": [
+      {
+        "title": "Abatibles",
+        "content": [
+          "Plataforma abatible de accionamiento hidráulico equipada con doble cilindro de elevación para una operación estable y uniforme, sistema hidráulico-eléctrico BUCHER (Suiza) con componentes de sellado NOK (Japón) y válvula de seguridad anticaída que detiene automáticamente el descenso en caso de retiro inesperado del vehículo, minimizando riesgos operativos. Incorpora un labio abatible de 400 mm fabricado en acero estructural Q345 de 16 mm, con superficie antideslizante y bisagras de alta resistencia para un acople seguro y confiable. La plataforma está construida con placa de acero de 8 mm de alta calidad y un bastidor reforzado con perfiles estructurales tipo C, lo que proporciona una mayor capacidad de carga, resistencia y durabilidad. Además, cuenta con protección lateral para los pies del operador y un diseño de transición suave entre la plataforma y el labio, facilitando el desplazamiento seguro de montacargas y reduciendo el impacto sobre el equipo durante las operaciones de carga y descarga."
+        ],
+        "images": [
+          "assets/images/plataformas-niveladoras/abatibles/plataforma-niveladora-abatible-01.png",
+          "assets/images/plataformas-niveladoras/abatibles/plataforma-niveladora-abatible-02.png",
+          "assets/images/plataformas-niveladoras/abatibles/plataforma-niveladora-abatible-03.png",
+          "assets/images/plataformas-niveladoras/abatibles/plataforma-niveladora-abatible-04.png",
+          "assets/images/plataformas-niveladoras/abatibles/plataforma-niveladora-abatible-05.png",
+          "assets/images/plataformas-niveladoras/abatibles/plataforma-niveladora-abatible-06.png"
+        ]
+      },
+      {
+        "title": "Mini Dock",
+        "content": [
+          "Nivelador mecánico de borde de muelle diseñado para ofrecer una solución económica, segura y confiable en operaciones de carga y descarga. Fabricado en acero de alta resistencia con superficie antideslizante, incorpora bisagra continua lubricable, resorte de torsión para un accionamiento suave y sistema de operación manual mediante barra de elevación. Su estructura reforzada, junto con topes de protección y parachoques de caucho, garantiza mayor durabilidad, seguridad y un acople eficiente con diferentes tipos de vehículos."
+        ],
+        "images": [
+          "assets/images/plataformas-niveladoras/mini-dock/plataforma-niveladora-mini-dock-01.png",
+          "assets/images/plataformas-niveladoras/mini-dock/plataforma-niveladora-mini-dock-02.jpg",
+          "assets/images/plataformas-niveladoras/mini-dock/plataforma-niveladora-mini-dock-03.jpg",
+          "assets/images/plataformas-niveladoras/mini-dock/plataforma-niveladora-mini-dock-04.png"
+        ]
+      },
+      {
+        "title": "Telescópicas",
+        "content": [
+          "La plataforma niveladora telescópica de doble cilindro YAK está diseñada para optimizar las operaciones de carga y descarga en centros de distribución, plantas industriales y bodegas con alta rotación de mercancías. Su labio telescópico de extensión hidráulica permite un posicionamiento preciso sobre el vehículo, facilitando la atención de diferentes tipos de remolques y reduciendo los tiempos de operación.",
+          "El sistema de doble cilindro hidráulico proporciona una elevación estable, uniforme y segura de la plataforma, garantizando un funcionamiento confiable incluso en aplicaciones de trabajo intensivo. Su estructura de acero de alta resistencia está diseñada para soportar cargas dinámicas elevadas y ofrecer una larga vida útil con mínimos requerimientos de mantenimiento.",
+          "Gracias a su diseño versátil, la plataforma telescópica permite compensar diferencias de altura y distancia entre el muelle y el vehículo, aumentando la seguridad del personal y protegiendo la mercancía y los equipos de manipulación.",
+          "Ideal para centros de distribución, industrias manufactureras, operadores logísticos, empresas de alimentos y bebidas, cadenas de retail, frigoríficos y cualquier instalación que requiera operaciones de carga y descarga eficientes, seguras y continuas."
+        ],
+        "images": [
+          "assets/images/plataformas-niveladoras/telescopicas/plataforma-niveladora-telescopica-01.png",
+          "assets/images/plataformas-niveladoras/telescopicas/plataforma-niveladora-telescopica-02.png",
+          "assets/images/plataformas-niveladoras/telescopicas/plataforma-niveladora-telescopica-03.png",
+          "assets/images/plataformas-niveladoras/telescopicas/plataforma-niveladora-telescopica-04.png",
+          "assets/images/plataformas-niveladoras/telescopicas/plataforma-niveladora-telescopica-05.png",
+          "assets/images/plataformas-niveladoras/telescopicas/plataforma-niveladora-telescopica-06.png"
+        ]
+      }
     ]
   },
   {
@@ -64,20 +126,20 @@
       "Gracias a su diseño modular y a la posibilidad de configuración según el tipo de instalación, estas puertas se integran fácilmente en proyectos nuevos o existentes, asegurando confiabilidad operativa, durabilidad y bajo mantenimiento."
     ],
     "images": [
-      "assets/images/puertas-seccionales/Imagen39.jpg",
-      "assets/images/puertas-seccionales/Imagen40.jpg",
-      "assets/images/puertas-seccionales/Imagen41.png",
-      "assets/images/puertas-seccionales/Imagen42.jpg",
-      "assets/images/puertas-seccionales/Imagen43.jpg",
-      "assets/images/puertas-seccionales/Imagen44.png",
-      "assets/images/puertas-seccionales/Imagen45.jpg",
-      "assets/images/puertas-seccionales/Imagen46.jpg",
-      "assets/images/puertas-seccionales/Imagen47.jpg",
-      "assets/images/puertas-seccionales/Imagen48.jpg",
-      "assets/images/puertas-seccionales/Imagen49.jpg",
-      "assets/images/puertas-seccionales/Imagen50.png",
-      "assets/images/puertas-seccionales/Imagen51.jpg",
-      "assets/images/puertas-seccionales/Imagen52.jpg"
+      "assets/images/puertas-seccionales/puerta-seccional-01.jpg",
+      "assets/images/puertas-seccionales/puerta-seccional-02.jpg",
+      "assets/images/puertas-seccionales/puerta-seccional-03.png",
+      "assets/images/puertas-seccionales/puerta-seccional-04.jpg",
+      "assets/images/puertas-seccionales/puerta-seccional-05.jpg",
+      "assets/images/puertas-seccionales/puerta-seccional-06.png",
+      "assets/images/puertas-seccionales/puerta-seccional-07.jpg",
+      "assets/images/puertas-seccionales/puerta-seccional-08.jpg",
+      "assets/images/puertas-seccionales/puerta-seccional-09.jpg",
+      "assets/images/puertas-seccionales/puerta-seccional-10.jpg",
+      "assets/images/puertas-seccionales/puerta-seccional-11.jpg",
+      "assets/images/puertas-seccionales/puerta-seccional-12.png",
+      "assets/images/puertas-seccionales/puerta-seccional-13.jpg",
+      "assets/images/puertas-seccionales/puerta-seccional-14.jpg"
     ]
   },
   {
@@ -95,14 +157,14 @@
           "Los abrigos de lona ofrecen una alta flexibilidad y resistencia en andenes de carga de uso medio a alto, sellando el contorno del camión al acoplarse contra la fachada."
         ],
         "images": [
-          "assets/images/abrigos/lona/Imagen53.png",
-          "assets/images/abrigos/lona/Imagen54.jpg",
-          "assets/images/abrigos/lona/Imagen55.png",
-          "assets/images/abrigos/lona/Imagen56.jpg",
-          "assets/images/abrigos/lona/Imagen57.jpg",
-          "assets/images/abrigos/lona/Imagen58.jpg",
-          "assets/images/abrigos/lona/Imagen59.jpg",
-          "assets/images/abrigos/lona/Imagen60.jpg"
+          "assets/images/abrigos/lona/abrigo-lona-01.png",
+          "assets/images/abrigos/lona/abrigo-lona-02.jpg",
+          "assets/images/abrigos/lona/abrigo-lona-03.png",
+          "assets/images/abrigos/lona/abrigo-lona-04.jpg",
+          "assets/images/abrigos/lona/abrigo-lona-05.jpg",
+          "assets/images/abrigos/lona/abrigo-lona-06.jpg",
+          "assets/images/abrigos/lona/abrigo-lona-07.jpg",
+          "assets/images/abrigos/lona/abrigo-lona-08.jpg"
         ]
       },
       {
@@ -111,13 +173,13 @@
           "Los abrigos de espuma sellan herméticamente por compresión, ideales para instalaciones climatizadas o refrigeradas donde el control térmico es crítico."
         ],
         "images": [
-          "assets/images/abrigos/espuma/Imagen61.jpg",
-          "assets/images/abrigos/espuma/Imagen62.jpg",
-          "assets/images/abrigos/espuma/Imagen63.jpg",
-          "assets/images/abrigos/espuma/Imagen64.jpg",
-          "assets/images/abrigos/espuma/Imagen65.jpg",
-          "assets/images/abrigos/espuma/Imagen66.jpg",
-          "assets/images/abrigos/espuma/Imagen67.jpg"
+          "assets/images/abrigos/espuma/abrigo-espuma-01.jpg",
+          "assets/images/abrigos/espuma/abrigo-espuma-02.jpg",
+          "assets/images/abrigos/espuma/abrigo-espuma-03.jpg",
+          "assets/images/abrigos/espuma/abrigo-espuma-04.jpg",
+          "assets/images/abrigos/espuma/abrigo-espuma-05.jpg",
+          "assets/images/abrigos/espuma/abrigo-espuma-06.jpg",
+          "assets/images/abrigos/espuma/abrigo-espuma-07.jpg"
         ]
       },
       {
@@ -126,10 +188,10 @@
           "Los abrigos inflables proporcionan el mejor sellado posible al inflarse alrededor de la carrocería del camión una vez acoplado, garantizando cero pérdidas térmicas."
         ],
         "images": [
-          "assets/images/abrigos/inflable/Imagen68.jpg",
-          "assets/images/abrigos/inflable/Imagen69.jpg",
-          "assets/images/abrigos/inflable/Imagen70.jpg",
-          "assets/images/abrigos/inflable/Imagen71.png"
+          "assets/images/abrigos/inflable/abrigo-inflable-01.jpg",
+          "assets/images/abrigos/inflable/abrigo-inflable-02.jpg",
+          "assets/images/abrigos/inflable/abrigo-inflable-03.jpg",
+          "assets/images/abrigos/inflable/abrigo-inflable-04.png"
         ]
       }
     ]
@@ -142,15 +204,15 @@
       "Los bolardos están diseñados tanto para interiores como exteriores entregando contención, duración y fácil instalación."
     ],
     "images": [
-      "assets/images/protecciones/Imagen72.png",
-      "assets/images/protecciones/Imagen73.png",
-      "assets/images/protecciones/Imagen74.png",
-      "assets/images/protecciones/Imagen75.png",
-      "assets/images/protecciones/Imagen76.jpg",
-      "assets/images/protecciones/Imagen77.jpg",
-      "assets/images/protecciones/Imagen78.jpg",
-      "assets/images/protecciones/Imagen79.png",
-      "assets/images/protecciones/Imagen80.jpg"
+      "assets/images/protecciones/proteccion-01.png",
+      "assets/images/protecciones/proteccion-02.png",
+      "assets/images/protecciones/proteccion-03.png",
+      "assets/images/protecciones/proteccion-04.png",
+      "assets/images/protecciones/proteccion-05.jpg",
+      "assets/images/protecciones/proteccion-06.jpg",
+      "assets/images/protecciones/proteccion-07.jpg",
+      "assets/images/protecciones/proteccion-08.png",
+      "assets/images/protecciones/proteccion-09.jpg"
     ]
   },
   {
@@ -160,12 +222,12 @@
       "Los túneles isotérmicos se instalan delante de la nave. Esto significa: La nave se puede aprovechar totalmente hasta las paredes exteriores. Los túneles isotérmicos son siempre una opción buena si la construcción de las naves no permite la instalación de plataformas interiores o no se ha previsto un foso inferior para las mismas."
     ],
     "images": [
-      "assets/images/loading-house/Imagen81.jpg",
-      "assets/images/loading-house/Imagen82.jpg",
-      "assets/images/loading-house/Imagen83.png",
-      "assets/images/loading-house/Imagen84.png",
-      "assets/images/loading-house/Imagen85.png",
-      "assets/images/loading-house/Imagen86.png"
+      "assets/images/loading-house/loading-house-01.png",
+      "assets/images/loading-house/loading-house-02.png",
+      "assets/images/loading-house/loading-house-03.png",
+      "assets/images/loading-house/loading-house-04.png",
+      "assets/images/loading-house/loading-house-05.png",
+      "assets/images/loading-house/loading-house-06.png"
     ]
   },
   {
@@ -175,10 +237,10 @@
       "El sistema DOBO es la solución ideal para transportar mercancías de una forma absolutamente higiénica, para garantizar cadenas frigoríficas sin interrupciones, para reducir costes energéticos  y para cumplir con la política aduanera. Una ventaja más en cuanto a seguridad: El conductor puede acoplar sin bajarse del vehiculo. Así se minimiza el riesgo de accidentes en la zona de peligro entre el vehículo y la plataforma."
     ],
     "images": [
-      "assets/images/DOBO/Imagen87.png",
-      "assets/images/DOBO/Imagen88.png",
-      "assets/images/DOBO/Imagen89.png",
-      "assets/images/DOBO/Imagen90.png"
+      "assets/images/dobo/dobo-01.png",
+      "assets/images/dobo/dobo-02.png",
+      "assets/images/dobo/dobo-03.png",
+      "assets/images/dobo/dobo-04.png"
     ]
   },
   {
@@ -197,10 +259,10 @@
           "Su innovador sistema de guía en espiral sin eje de enrollamiento permite mayor rapidez, ahorro de espacio y funcionamiento sin fricción. Fabricadas con paneles de aluminio o acero de doble pared y opción de ventanas en policarbonato, son ideales para uso interior y exterior, ofreciendo durabilidad, diseño atractivo y eficiencia energética en un solo producto."
         ],
         "images": [
-          "assets/images/puertas-especializadas/thermicroll/Imagen91.png",
-          "assets/images/puertas-especializadas/thermicroll/Imagen92.png",
-          "assets/images/puertas-especializadas/thermicroll/Imagen93.png",
-          "assets/images/puertas-especializadas/thermicroll/Imagen94.png"
+          "assets/images/puertas-especializadas/thermicroll/puerta-especializada-thermicroll-01.png",
+          "assets/images/puertas-especializadas/thermicroll/puerta-especializada-thermicroll-02.png",
+          "assets/images/puertas-especializadas/thermicroll/puerta-especializada-thermicroll-03.png",
+          "assets/images/puertas-especializadas/thermicroll/puerta-especializada-thermicroll-04.png"
         ]
       },
       {
@@ -211,10 +273,10 @@
           "Su estructura de doble lona con malla de acero galvanizado garantiza durabilidad incluso en condiciones extremas, optimizando los procesos logísticos y mejorando la eficiencia operativa en instalaciones de gran escala."
         ],
         "images": [
-          "assets/images/puertas-especializadas/megapack/Imagen95.png",
-          "assets/images/puertas-especializadas/megapack/Imagen96.png",
-          "assets/images/puertas-especializadas/megapack/Imagen97.png",
-          "assets/images/puertas-especializadas/megapack/Imagen98.png"
+          "assets/images/puertas-especializadas/megapack/puerta-especializada-megapack-01.png",
+          "assets/images/puertas-especializadas/megapack/puerta-especializada-megapack-02.png",
+          "assets/images/puertas-especializadas/megapack/puerta-especializada-megapack-03.png",
+          "assets/images/puertas-especializadas/megapack/puerta-especializada-megapack-04.png"
         ]
       },
       {
@@ -224,12 +286,43 @@
           "Nuestras puertas cortafuego ATEX combinan la resistencia al fuego certificada con tecnología antiexplosiva de vanguardia. Diseñadas para compartimentar áreas de riesgo y evitar la propagación de incendios, estas soluciones son esenciales en industrias químicas, farmacéuticas, petroleras y de almacenamiento de materiales peligrosos."
         ],
         "images": [
-          "assets/images/puertas-especializadas/cortafuegos-ATEX/Imagen99.png",
-          "assets/images/puertas-especializadas/cortafuegos-ATEX/Imagen100.png",
-          "assets/images/puertas-especializadas/cortafuegos-ATEX/Imagen101.png",
-          "assets/images/puertas-especializadas/cortafuegos-ATEX/Imagen102.png"
+          "assets/images/puertas-especializadas/cortafuegos-atex/puerta-especializada-cortafuegos-atex-01.png",
+          "assets/images/puertas-especializadas/cortafuegos-atex/puerta-especializada-cortafuegos-atex-02.png",
+          "assets/images/puertas-especializadas/cortafuegos-atex/puerta-especializada-cortafuegos-atex-03.png",
+          "assets/images/puertas-especializadas/cortafuegos-atex/puerta-especializada-cortafuegos-atex-04.png"
         ]
       }
+    ]
+  },
+  {
+    "slide": 14,
+    "title": "Puertas Metálicas",
+    "content": [
+      "Nuestras puertas enrollables se fabrican a la medida para brindar seguridad, resistencia y un óptimo desempeño en aplicaciones industriales y comerciales. Son ideales para bodegas, muelles de carga, locales comerciales, vitrinas y cualquier espacio que requiera un sistema de cierre confiable.",
+      "Fabricadas bajo estándares de calidad para uso industrial y comercial, están disponibles en acero Cold Rolled o, según las necesidades de cada proyecto y las condiciones de operación.",
+      "Características: Material: Fleje en acero calibre 22, disponible en Cold Rolled · Dimensiones: Desde 1,20 m hasta 10 m de ancho · Accionamiento: Manual o automatizado · Instalación: Disponible según cobertura de servicio."
+    ],
+    "images": [
+      "assets/images/puertas-metalicas/puerta-metalica-01.png",
+      "assets/images/puertas-metalicas/puerta-metalica-02.png",
+      "assets/images/puertas-metalicas/puerta-metalica-03.png",
+      "assets/images/puertas-metalicas/puerta-metalica-04.png",
+      "assets/images/puertas-metalicas/puerta-metalica-05.png",
+      "assets/images/puertas-metalicas/puerta-metalica-06.png",
+      "assets/images/puertas-metalicas/puerta-metalica-07.png"
+    ]
+  },
+  {
+    "slide": 15,
+    "title": "Cortinas de Aire",
+    "content": [
+      "Air Curtain es una cortina de aire industrial diseñada para separar diferentes entornos sin obstaculizar el movimiento de personas, vehículos y mercancías. Instalada sobre las aberturas, genera un flujo de aire uniforme y de alta velocidad que limita el intercambio de aire entre las zonas interiores y exteriores, ayudando a mantener condiciones climáticas e higiénicas estables en el lugar de trabajo.",
+      "Con protección para aberturas de hasta 4 metros de altura y un caudal de aire de hasta 3.709 m³/h, Air Curtain es una solución fiable para instalaciones industriales, almacenes logísticos, empresas alimentarias y entornos de producción que requieren control de la contaminación, reducción de pérdidas energéticas y funcionamiento continuo."
+    ],
+    "images": [
+      "assets/images/cortinas-de-aire/cortina-aire-01.webp",
+      "assets/images/cortinas-de-aire/cortina-aire-02.webp",
+      "assets/images/cortinas-de-aire/cortina-aire-03.webp"
     ]
   }
 ]

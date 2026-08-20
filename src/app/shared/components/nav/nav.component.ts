@@ -10,6 +10,7 @@ interface NavItem {
   route?: string;
   label: string;
   delayClass: string;
+  external?: boolean;
   dropdownItems?: DropdownItem[];
 }
 
@@ -50,6 +51,8 @@ export class NavComponent {
         { route: '/loading-houses', label: 'Loading houses' },
         { route: '/protecciones', label: 'Protecciones' },
         { route: '/puertas-especializadas', label: 'Puertas Especializadas' },
+        { route: '/puertas-metalicas', label: 'Puertas metálicas' },
+        { route: '/cortinas-de-aire', label: 'Cortinas de aire' },
       ],
     },
     {
@@ -57,10 +60,17 @@ export class NavComponent {
       label: 'Casos de éxito',
       delayClass: 'animation-delay-300',
     },
+    // {
+    //   route: '#',
+    //   // route: '/multimedia',
+    //   label: 'Multimedia',
+    //   delayClass: 'animation-delay-400',
+    // },
     {
-      route: '/multimedia',
-      label: 'Multimedia',
-      delayClass: 'animation-delay-400',
+      route: 'https://refridcol.com/linea-etica/',
+      label: 'Línea Ética',
+      delayClass: 'animation-delay-500',
+      external: true,
     },
   ];
 
@@ -70,28 +80,28 @@ export class NavComponent {
       label: 'Facebook',
       iconClass: 'bi bi-facebook text-3xl',
       hoverColorClass: 'hover:text-[#1877F2]',
-      delayClass: 'animation-delay-500',
+      delayClass: 'animation-delay-600',
     },
     {
       href: 'https://www.instagram.com/yaklogistica/',
       label: 'Instagram',
       iconClass: 'bi bi-instagram text-3xl',
       hoverColorClass: 'hover:text-[#E1306C]',
-      delayClass: 'animation-delay-600',
+      delayClass: 'animation-delay-700',
     },
     {
       href: 'https://www.linkedin.com/company/yaklogistica/',
       label: 'LinkedIn',
-      iconClass: 'fa-brands fa-linkedin-in text-3xl',
+      iconClass: 'bi bi-linkedin text-3xl',
       hoverColorClass: 'hover:text-[#0A66C2]',
-      delayClass: 'animation-delay-700',
+      delayClass: 'animation-delay-800',
     },
     {
       href: 'https://www.youtube.com/@yaklogisticaindustrial3531',
       label: 'YouTube',
       iconClass: 'bi bi-youtube text-3xl',
       hoverColorClass: 'hover:text-[#FF0000]',
-      delayClass: 'animation-delay-800',
+      delayClass: 'animation-delay-900',
     },
   ];
 

@@ -10,7 +10,7 @@
   "
 >
   <div
-    class="flex justify-between items-center max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-4"
+    class="flex justify-between items-center max-w-screen-2xl mx-auto px-margin-mobile md:px-margin-desktop py-4"
   >
     <!-- Logo -->
     <a
@@ -27,12 +27,25 @@
     <!-- Desktop Nav Links -->
     <div class="hidden md:flex items-center gap-8">
       @for (item of navItems; track item.label) {
-        @if (!item.dropdownItems) {
+        @if (item.external) {
+          <a
+            [href]="item.route"
+            target="_blank"
+            rel="noopener noreferrer"
+            [class.text-white]="isScrolled()"
+            [class.text-black]="!isScrolled()"
+            class="hover:text-primary transition-all font-headline-md text-base font-bold hover:scale-105 duration-1000 animate-fade-in {{
+              item.delayClass
+            }}"
+          >
+            {{ item.label }}
+          </a>
+        } @else if (!item.dropdownItems) {
           <a
             [routerLink]="item.route"
             routerLinkActive="!text-primary"
             [class.text-white]="isScrolled()"
-            [class.text-on-surface-variant]="!isScrolled()"
+            [class.text-black]="!isScrolled()"
             class="hover:text-primary transition-all font-headline-md text-base font-bold hover:scale-105 duration-1000 animate-fade-in {{
               item.delayClass
             }}"
@@ -44,14 +57,14 @@
           <div class="relative group">
             <button
               [class.text-white]="isScrolled()"
-              [class.text-on-surface-variant]="!isScrolled()"
+              [class.text-black]="!isScrolled()"
               class="hover:text-primary transition-colors font-headline-md text-base font-bold hover:scale-105 duration-1000 flex items-center gap-1 focus:outline-none animate-fade-in {{
                 item.delayClass
               }}"
             >
               {{ item.label }}
               <span
-                class="material-symbols-outlined text-sm transition-transform duration-500 group-hover:rotate-180"
+                class="material-symbols-outlined text-sm transition-transform font-bold duration-500 group-hover:rotate-180"
                 >keyboard_arrow_down</span
               >
             </button>
@@ -62,7 +75,7 @@
                 <a
                   [routerLink]="subItem.route"
                   routerLinkActive="text-primary font-bold"
-                  class="block px-4 py-2 text-sm text-on-surface-variant hover:bg-gray-50 hover:text-primary transition-colors"
+                  class="block px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-primary transition-colors"
                 >
                   {{ subItem.label }}
                 </a>
@@ -82,7 +95,7 @@
           rel="noopener noreferrer"
           [title]="social.label"
           [class.text-white]="isScrolled()"
-          [class.text-on-surface-variant]="!isScrolled()"
+          [class.text-black]="!isScrolled()"
           class="w-10 h-10 rounded-full hover:border border-white/70 flex items-center justify-center hover:scale-105 transition-transform animate-fade-in {{
             social.hoverColorClass
           }} {{ social.delayClass }}"
@@ -96,7 +109,7 @@
     <button
       aria-label="Abrir menú"
       [class.text-white]="isScrolled()"
-      [class.text-on-surface]="!isScrolled()"
+      [class.text-black]="!isScrolled()"
       class="md:hidden p-2"
       (click)="toggleMobileMenu()"
     >
@@ -115,12 +128,24 @@
       "
     >
       @for (item of navItems; track item.label) {
-        @if (!item.dropdownItems) {
+        @if (item.external) {
+          <a
+            [href]="item.route"
+            target="_blank"
+            rel="noopener noreferrer"
+            (click)="toggleMobileMenu()"
+            [class.text-white]="isScrolled()"
+            [class.text-black]="!isScrolled()"
+            class="hover:text-primary font-bold text-label-sm py-2"
+          >
+            {{ item.label }}
+          </a>
+        } @else if (!item.dropdownItems) {
           <a
             [routerLink]="item.route"
             (click)="toggleMobileMenu()"
             [class.text-white]="isScrolled()"
-            [class.text-on-surface-variant]="!isScrolled()"
+            [class.text-black]="!isScrolled()"
             class="hover:text-primary font-bold text-label-sm py-2"
           >
             {{ item.label }}
@@ -130,7 +155,7 @@
             <button
               (click)="toggleMobileDropdown($event)"
               [class.text-white]="isScrolled()"
-              [class.text-on-surface-variant]="!isScrolled()"
+              [class.text-black]="!isScrolled()"
               class="hover:text-primary font-bold text-label-sm py-2 text-left flex items-center justify-between"
             >
               {{ item.label }}
@@ -151,7 +176,7 @@
                     [routerLink]="subItem.route"
                     (click)="toggleMobileMenu()"
                     [class.text-white]="isScrolled()"
-                    [class.text-on-surface-variant]="!isScrolled()"
+                    [class.text-black]="!isScrolled()"
                     class="hover:text-primary font-bold text-label-sm py-1.5"
                   >
                     {{ subItem.label }}

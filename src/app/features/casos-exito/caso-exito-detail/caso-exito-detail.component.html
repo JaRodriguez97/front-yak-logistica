@@ -1,8 +1,10 @@
 <section
-  class="min-h-screen bg-gradient-to-b from-surface-container-lowest via-surface-container-lowest to-surface-container-low text-on-surface pt-28 pb-20"
+  class="min-h-screen bg-gradient-to-b from-white via-white to-gray-50 text-black pt-28 pb-20"
 >
   @if (caso) {
-    <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop w-full">
+    <div
+      class="max-w-screen-2xl mx-auto px-margin-mobile md:px-margin-desktop w-full"
+    >
       <!-- Breadcrumb and Back -->
       <div class="mb-12 flex items-center justify-between animate-fade-in">
         <a
@@ -16,47 +18,57 @@
           Volver a Casos de Éxito
         </a>
         <span
-          class="text-xs uppercase tracking-widest bg-surface-container-high px-4 py-1.5 rounded-full font-bold text-primary"
+          class="text-xs uppercase tracking-widest bg-gray-100 px-4 py-1.5 rounded-full font-bold text-primary"
         >
           Galería de Medios
         </span>
       </div>
 
       <!-- Header Section -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mb-16 animate-fade-in">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mb-16 animate-fade-in"
+      >
         <!-- Text content (Left 8 cols) -->
         <div class="lg:col-span-8 text-left">
-          <span class="text-sm uppercase tracking-wider text-primary font-bold block mb-2">
+          <span
+            class="text-sm uppercase tracking-wider text-primary font-bold block mb-2"
+          >
             {{ caso.industry }}
           </span>
           <h1
-            class="text-4xl md:text-5xl font-bold mb-6 font-headline-xl text-on-surface tracking-tight leading-tight"
+            class="text-4xl md:text-5xl font-bold mb-6 font-headline-xl text-black tracking-tight leading-tight"
           >
             {{ caso.title }}
           </h1>
           <p
-            class="font-body-lg text-lg md:text-xl text-on-surface-variant leading-relaxed text-wrap"
+            class="font-body-lg text-lg md:text-xl text-gray-500 leading-relaxed text-wrap"
           >
             {{ caso.description }}
           </p>
         </div>
 
         <!-- Metadata Sidebar (Right 4 cols) -->
-        <div class="lg:col-span-4 bg-surface-container-low p-6 rounded-2xl border border-outline-variant w-full">
-          <h3 class="font-headline-md text-lg font-bold mb-4 text-on-surface">Detalles del Proyecto</h3>
-          <ul class="space-y-3 font-body-md text-sm text-on-surface-variant">
-            <li class="flex justify-between border-b border-outline-variant pb-2">
+        <div
+          class="lg:col-span-4 bg-gray-50 p-6 rounded-2xl border border-gray-200 w-full"
+        >
+          <h3 class="font-headline-md text-lg font-bold mb-4 text-black">
+            Detalles del Proyecto
+          </h3>
+          <ul class="space-y-3 font-body-md text-sm text-gray-500">
+            <li class="flex justify-between border-b border-gray-200 pb-2">
               <span class="font-medium text-gray-500">Cliente:</span>
-              <span class="font-bold text-on-surface">{{ caso.client }}</span>
+              <span class="font-bold text-black">{{ caso.client }}</span>
             </li>
-            <li class="flex justify-between border-b border-outline-variant pb-2">
+            <li class="flex justify-between border-b border-gray-200 pb-2">
               <span class="font-medium text-gray-500">Industria:</span>
-              <span class="font-bold text-on-surface">{{ caso.industry }}</span>
+              <span class="font-bold text-black">{{ caso.industry }}</span>
             </li>
             @if (caso.problem) {
-              <li class="flex flex-col border-b border-outline-variant pb-2 gap-1 text-left">
+              <li
+                class="flex flex-col border-b border-gray-200 pb-2 gap-1 text-left"
+              >
                 <span class="font-medium text-gray-500">Problema:</span>
-                <span class="font-bold text-error">{{ caso.problem }}</span>
+                <span class="font-bold text-red-600">{{ caso.problem }}</span>
               </li>
             }
             <li class="flex flex-col gap-1 text-left pb-1">
@@ -68,29 +80,37 @@
       </div>
 
       <!-- Bento Grid Gallery -->
-      <div class="grid grid-cols-1 md:grid-cols-3 auto-rows-[240px] gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 auto-rows-[240px] gap-6 md:grid-flow-dense">
         @for (item of caso.media; track item.url; let idx = $index) {
           <div
             (click)="openLightbox(idx)"
-            class="group relative rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer border border-outline-variant bg-surface-container-high"
+            class="group relative rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer border border-gray-200 bg-gray-100"
             [class.md:col-span-2]="idx % 6 === 0 || idx % 6 === 3"
             [class.md:row-span-2]="idx % 6 === 0 || idx % 6 === 2"
-            [class.md:col-span-1]="idx % 6 === 1 || idx % 6 === 2 || idx % 6 === 4 || idx % 6 === 5"
-            [class.md:row-span-1]="idx % 6 === 1 || idx % 6 === 3 || idx % 6 === 4 || idx % 6 === 5"
+            [class.md:col-span-1]="
+              idx % 6 === 1 || idx % 6 === 2 || idx % 6 === 4 || idx % 6 === 5
+            "
+            [class.md:row-span-1]="
+              idx % 6 === 1 || idx % 6 === 3 || idx % 6 === 4 || idx % 6 === 5
+            "
           >
             <!-- Media content -->
-            @if (item.type === 'video') {
+            @if (item.type === "video") {
               <video
                 [src]="item.url"
                 autoplay
-                muted
+                [muted]="true"
                 loop
                 playsinline
                 class="w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-105"
               ></video>
               <!-- Video Badge indicator -->
-              <div class="absolute top-4 left-4 z-20 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1.5 text-[10px] uppercase font-bold tracking-wider text-white">
-                <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+              <div
+                class="absolute top-4 left-4 z-20 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1.5 text-[10px] uppercase font-bold tracking-wider text-white"
+              >
+                <span
+                  class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"
+                ></span>
                 Video
               </div>
             } @else {
@@ -103,10 +123,14 @@
             }
 
             <!-- Hover overlay -->
-            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center">
-              <div class="w-12 h-12 bg-white/20 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center transform scale-75 group-hover:scale-100 transition-transform duration-300">
+            <div
+              class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center"
+            >
+              <div
+                class="w-12 h-12 bg-white/20 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center transform scale-75 group-hover:scale-100 transition-transform duration-300"
+              >
                 <span class="material-symbols-outlined text-white text-2xl">
-                  {{ item.type === 'video' ? 'play_arrow' : 'zoom_in' }}
+                  {{ item.type === "video" ? "play_arrow" : "zoom_in" }}
                 </span>
               </div>
             </div>
@@ -116,8 +140,13 @@
     </div>
   } @else {
     <div class="max-w-md mx-auto text-center py-20">
-      <p class="text-lg text-on-surface-variant mb-6">El caso de éxito solicitado no existe.</p>
-      <a routerLink="/casos-exito" class="btn-primary px-6 py-3 rounded-full uppercase font-bold text-sm tracking-wider">
+      <p class="text-lg text-gray-500 mb-6">
+        El caso de éxito solicitado no existe.
+      </p>
+      <a
+        routerLink="/casos-exito"
+        class="btn-primary px-6 py-3 rounded-full uppercase font-bold text-sm tracking-wider"
+      >
         Ver todos los casos
       </a>
     </div>
@@ -159,10 +188,15 @@
       </button>
 
       <!-- Zoom indicator/help tag (Only for images) -->
-      @if (getActiveMedia()?.type === 'image') {
-        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 bg-black/60 backdrop-blur-md px-4 py-2 rounded-full text-xs font-semibold text-white/90 select-none pointer-events-none flex items-center gap-2">
+      @if (getActiveMedia()?.type === "image") {
+        <div
+          class="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 bg-black/60 backdrop-blur-md px-4 py-2 rounded-full text-xs font-semibold text-white/90 select-none pointer-events-none flex items-center gap-2"
+        >
           <span class="material-symbols-outlined text-sm">zoom_in</span>
-          <span>Doble click para zoom. Usa scroll o arrastra la imagen. Zoom: {{ zoomLevel().toFixed(1) }}x</span>
+          <span
+            >Doble click para zoom. Usa scroll o arrastra la imagen. Zoom:
+            {{ zoomLevel().toFixed(1) }}x</span
+          >
         </div>
       }
 
@@ -171,11 +205,12 @@
         (click)="$event.stopPropagation()"
         class="relative max-w-5xl max-h-[85vh] w-full h-full flex items-center justify-center overflow-hidden"
       >
-        @if (getActiveMedia()?.type === 'video') {
+        @if (getActiveMedia()?.type === "video") {
           <video
             [src]="getActiveMedia()?.url"
             controls
             autoplay
+            [muted]="true"
             loop
             class="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl border border-white/10"
           ></video>
@@ -191,7 +226,15 @@
             (touchmove)="onPanMove($event)"
             (touchend)="onPanEnd()"
             (dblclick)="toggleZoom($event)"
-            [style.transform]="'translate(' + panX() + 'px, ' + panY() + 'px) scale(' + zoomLevel() + ')'"
+            [style.transform]="
+              'translate(' +
+              panX() +
+              'px, ' +
+              panY() +
+              'px) scale(' +
+              zoomLevel() +
+              ')'
+            "
             class="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl border border-white/10 select-none origin-center"
             [class.cursor-zoom-in]="zoomLevel() === 1"
             [class.cursor-grab]="zoomLevel() > 1 && !isDragging"
@@ -204,7 +247,9 @@
 
         <!-- Caption (Only shown when not zoomed to prevent overlaps) -->
         @if (zoomLevel() === 1) {
-          <div class="absolute bottom-4 left-0 right-0 text-center text-white/80 font-body-md text-sm px-4">
+          <div
+            class="absolute bottom-4 left-0 right-0 text-center text-white/80 font-body-md text-sm px-4"
+          >
             {{ getActiveMedia()?.alt }}
           </div>
         }

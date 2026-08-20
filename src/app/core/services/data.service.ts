@@ -20,7 +20,7 @@ export class DataService {
     .get<RawProduct[]>('assets/data/content.json')
     .pipe(
       map((raw) => this.mapWithSlugs(raw)),
-      shareReplay(1)
+      shareReplay(1),
     );
 
   /** Returns all products */
@@ -32,14 +32,14 @@ export class DataService {
   getBySlug(slug: string): Observable<Product | undefined> {
     const targetSlide = PRODUCT_SLUG_MAP[slug];
     return this.products$.pipe(
-      map((products) => products.find((p) => p.slide === targetSlide))
+      map((products) => products.find((p) => p.slide === targetSlide)),
     );
   }
 
   // Inject the slug field into each product based on PRODUCT_SLUG_MAP
   private mapWithSlugs(raw: RawProduct[]): Product[] {
     const slideToSlug: Record<number, string> = Object.fromEntries(
-      Object.entries(PRODUCT_SLUG_MAP).map(([slug, slide]) => [slide, slug])
+      Object.entries(PRODUCT_SLUG_MAP).map(([slug, slide]) => [slide, slug]),
     );
 
     return raw.map((item) => ({

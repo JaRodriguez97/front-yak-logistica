@@ -1,7 +1,9 @@
 <section
-  class="min-h-screen bg-gradient-to-b from-surface-container-lowest via-surface-container-lowest to-surface-container-low text-on-surface pt-28 pb-20"
+  class="min-h-screen bg-gradient-to-b from-white via-white to-gray-50 text-black pt-28 pb-20"
 >
-  <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop w-full">
+  <div
+    class="max-w-screen-2xl mx-auto px-margin-mobile md:px-margin-desktop w-full"
+  >
     <!-- Breadcrumb and Back -->
     <div class="mb-12 flex items-center justify-between">
       <a
@@ -15,7 +17,7 @@
         Volver al inicio
       </a>
       <span
-        class="text-xs uppercase tracking-widest bg-surface-container-high px-4 py-1.5 rounded-full font-bold text-primary"
+        class="text-xs uppercase tracking-widest bg-gray-100 px-4 py-1.5 rounded-full font-bold text-primary"
       >
         Referencias
       </span>
@@ -24,14 +26,16 @@
     <!-- Header Section -->
     <div class="max-w-3xl text-left mb-16 animate-fade-in">
       <h1
-        class="text-4xl md:text-5xl font-bold mb-6 font-headline-xl text-on-surface tracking-tight leading-tight"
+        class="text-4xl md:text-5xl font-bold mb-6 font-headline-xl text-black tracking-tight leading-tight"
       >
         Casos de Éxito
       </h1>
       <p
-        class="font-body-lg text-lg md:text-xl text-on-surface-variant leading-relaxed text-wrap"
+        class="font-body-lg text-lg md:text-xl text-gray-500 leading-relaxed text-wrap"
       >
-        Conoce de primera mano cómo optimizamos los accesos, la cadena de frío, la continuidad operativa y la seguridad en las principales plantas e instalaciones industriales del país.
+        Conoce de primera mano cómo optimizamos los accesos, la cadena de frío,
+        la continuidad operativa y la seguridad en las principales plantas e
+        instalaciones industriales del país.
       </p>
     </div>
 
@@ -54,7 +58,9 @@
         >
           <!-- Background Image -->
           <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"
+            ></div>
             <img
               [src]="getFeaturedImage(caso)"
               [alt]="caso.title"
@@ -64,21 +70,33 @@
           </div>
 
           <!-- Content -->
-          <div class="relative z-20 flex flex-col h-full justify-end text-white">
-            <span class="text-xs uppercase tracking-widest text-primary font-bold mb-2">
+          <div
+            class="relative z-20 flex flex-col h-full justify-end text-white"
+          >
+            <span
+              class="text-xs uppercase tracking-widest text-primary font-bold mb-2"
+            >
               {{ caso.industry }}
             </span>
-            <h2 class="font-headline-lg text-2xl md:text-3xl font-bold mb-2 tracking-tight">
+            <h2
+              class="font-headline-lg text-2xl md:text-3xl font-bold mb-2 tracking-tight"
+            >
               {{ caso.title }}
             </h2>
-            <p class="font-body-md text-sm text-gray-200 line-clamp-2 max-w-xl transition-colors duration-300 group-hover:text-white">
+            <p
+              class="font-body-md text-sm text-gray-200 line-clamp-2 max-w-xl transition-colors duration-300 group-hover:text-white"
+            >
               {{ caso.description }}
             </p>
-            
+
             <!-- Hover Button Effect -->
-            <div class="mt-4 flex items-center gap-2 text-primary font-bold text-sm transform translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+            <div
+              class="mt-4 flex items-center gap-2 text-primary font-bold text-sm transform translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+            >
               Ver galería de fotos y videos
-              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              <span class="material-symbols-outlined text-sm"
+                >arrow_forward</span
+              >
             </div>
           </div>
         </a>

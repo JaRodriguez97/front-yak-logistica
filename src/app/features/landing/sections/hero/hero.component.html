@@ -1,29 +1,39 @@
-<section
+﻿<section
   id="inicio"
   class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden"
 >
   <!-- Background Image -->
-  <div class="absolute inset-0 z-0">
+  <div class="absolute inset-0 z-0 bg-black">
     <div class="absolute inset-0 bg-black/60 z-10"></div>
+
+    <!-- Default Background Image -->
     <img
-      id="hero-bg-image"
-      [src]="activeBg()"
+      src="../../../../../assets/images/bg.webp"
       alt="Fondo de instalaciones logísticas e infraestructura industrial de YAK Logística"
       fetchpriority="high"
-      class="hero-bg-image w-full h-full object-cover object-center animate-fade-in"
-      [class.is-fading]="isFading()"
+      class="hero-bg-image"
+      [class.is-active]="hoveredServiceIndex() === null"
     />
+
+    <!-- Service Specific Background Images -->
+    @for (service of services; track service.alt; let idx = $index) {
+      <img
+        [src]="service.bg"
+        [alt]="'Fondo de ' + service.alt"
+        class="hero-bg-image"
+        [class.is-active]="hoveredServiceIndex() === idx"
+      />
+    }
   </div>
 
   <!-- Hero Content -->
   <div
-    class="relative z-20 max-w-[1440px] w-full mx-auto px-margin-mobile md:px-margin-desktop text-center text-white flex flex-col items-center"
+    class="relative z-20 max-w-screen-2xl w-full mx-auto px-margin-mobile md:px-margin-desktop text-center text-white flex flex-col items-center"
   >
     <div class="w-full grid grid-cols-1 items-center relative">
       <div
         id="hero-content"
         class="hero-content flex flex-col items-center lg:items-center"
-        [class.is-shifted]="isShifted()"
         [class.is-fading]="isFading()"
       >
         <!-- Heading -->
@@ -69,23 +79,14 @@
         <div
           class="hero-stats grid grid-cols-2 lg:grid-cols-5 gap-4 w-full max-w-5xl mx-auto"
         >
-          <!--  estas clases para el div que está arriba y que desaparezca cuando se hace hover
-            sobre los items de la lista de servicios lateral
-            class="hero-stats grid grid-cols-2 lg:grid-cols-5 gap-4 w-full max-w-5xl mx-auto transition-all duration-500"
-          [class.hidden]="activeIndex() !== null"
-          [class.invisible]="activeIndex() !== null"
-          [class.pointer-events-none]="activeIndex() !== null" -->
           @for (counter of counters; track counter.label; let i = $index) {
             <div
               class="animate-fade-in"
-              [class.animation-delay-500]="i === 0"
-              [class.animation-delay-600]="i === 1"
-              [class.animation-delay-700]="i === 2"
-              [class.animation-delay-800]="i >= 3"
+              [style.animation-delay.ms]="i >= 3 ? 800 : 500 + i * 100"
             >
               <a
                 [routerLink]="counter.route"
-                class="glass-card-light rounded-2xl p-6 text-center text-on-surface transform hover:-translate-y-2 hover:scale-95 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 group cursor-pointer flex flex-col justify-between h-full"
+                class="glass-card-light rounded-2xl p-6 text-center text-black transform hover:-translate-y-2 hover:scale-95 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 group cursor-pointer flex flex-col justify-between h-full"
               >
                 <img
                   [src]="counter.image"
@@ -93,12 +94,14 @@
                   class="h-25 w-auto object-contain mx-auto transition-transform duration-300"
                 />
                 <div
-                  class="font-headline-md text-headline-md font-bold transform group-hover:scale-105 group-hover:text-primary transition-all duration-300"
+                  class="font-headline-md text-headline-md font-bold transform group-hover:scale-105 group-hover:text-primary transition-all duration-300 stats-counter-value"
+                  [attr.data-target]="counter.target"
+                  [attr.data-prefix]="counter.prefix"
                 >
-                  {{ counter.prefix }}{{ counterValues()[i] }}
+                  {{ counter.prefix }}0
                 </div>
                 <div
-                  class="font-label-sm text-label-sm text-on-surface-variant font-medium group-hover:text-on-surface transition-colors duration-300"
+                  class="font-label-sm text-label-sm text-black font-medium group-hover:text-black transition-colors duration-300"
                 >
                   {{ counter.label }}
                 </div>
@@ -114,24 +117,10 @@
   <aside
     id="hero-services-panel"
     class="hero-services-panel w-full max-w-max mx-auto mt-8 lg:mt-0 lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 rounded-xl p-4 md:p-3 text-left z-20"
-    (mouseenter)="onPanelEnter()"
-    (mouseleave)="onPanelLeave()"
-    (focusin)="onPanelEnter()"
-    (focusout)="onPanelFocusOut($event)"
   >
     <ul class="space-y-2">
       @for (service of services; track service.alt; let i = $index) {
-        <li
-          class="animate-fade-in"
-          [class.animation-delay-300]="i === 0"
-          [class.animation-delay-400]="i === 1"
-          [class.animation-delay-500]="i === 2"
-          [class.animation-delay-600]="i === 3"
-          [class.animation-delay-700]="i === 4"
-          [class.animation-delay-800]="i === 5"
-          [class.animation-delay-900]="i === 6"
-          [class.animation-delay-1000]="i === 7"
-        >
+        <li class="animate-fade-in" [style.animation-delay.ms]="300 + i * 100">
           <a
             [routerLink]="service.route"
             class="hero-service-item w-full flex items-center justify-center rounded-xl border border-white/30 p-2 transition-colors"

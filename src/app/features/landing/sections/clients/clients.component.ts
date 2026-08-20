@@ -5,8 +5,11 @@ import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reve
   selector: 'app-clients',
   standalone: true,
   imports: [ScrollRevealDirective],
-  templateUrl: './clients.component.html'
+  templateUrl: './clients.component.html',
 })
 export class ClientsComponent {
-  readonly clientLogos = Array.from({ length: 17 }, (_, i) => `assets/images/clientes/Imagen${111 + i}.png`);
+  readonly clientLogos = Array.from(
+    { length: 18 },
+    (_, i) => `assets/images/clientes/Imagen${110 + i}.png`,
+  );
 }

@@ -30,6 +30,8 @@ export const PRODUCT_SLUG_MAP: Record<string, number> = {
   'docking-before-opening': 12,
   'puertas-especializadas': 13,
   'puertas-cortafuego-atex': 13, // map ATEX to the specialized doors page too
+  'puertas-metalicas': 14,
+  'cortinas-de-aire': 15,
 };
 
 // Meta interface for SEO configuration per page

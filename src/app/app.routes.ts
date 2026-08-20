@@ -1,17 +1,17 @@
 import { Routes } from '@angular/router';
+import { LandingComponent } from './features/landing/landing.component';
 
 export const routes: Routes = [
   {
     path: '',
-    loadChildren: () =>
-      import('./features/landing/landing.routes').then((m) => m.LANDING_ROUTES),
+    component: LandingComponent,
   },
   // Corporativo, Proyectos, Multimedia paths loading LandingComponent
   {
     path: 'corporativo',
     loadComponent: () =>
       import('./features/corporativo/corporativo.component').then(
-        (m) => m.CorporativoComponent
+        (m) => m.CorporativoComponent,
       ),
   },
   {
@@ -23,27 +23,27 @@ export const routes: Routes = [
     path: 'casos-exito',
     loadComponent: () =>
       import('./features/casos-exito/casos-exito.component').then(
-        (m) => m.CasosExitoComponent
+        (m) => m.CasosExitoComponent,
       ),
   },
   {
     path: 'casos-exito/:slug',
     loadComponent: () =>
       import('./features/casos-exito/caso-exito-detail/caso-exito-detail.component').then(
-        (m) => m.CasoExitoDetailComponent
+        (m) => m.CasoExitoDetailComponent,
       ),
   },
-  {
+/*   {
     path: 'multimedia',
     loadComponent: () =>
       import('./features/landing/landing.component').then((m) => m.LandingComponent),
-  },
+  },*/ 
   // Explicit top-level product paths with data-driven slug injection
   {
     path: 'puertas-rapidas',
     loadComponent: () =>
       import('./features/product-detail/product-detail.component').then(
-        (m) => m.ProductDetailComponent
+        (m) => m.ProductDetailComponent,
       ),
     data: { slug: 'puertas-rapidas' },
   },
@@ -51,7 +51,7 @@ export const routes: Routes = [
     path: 'plataformas-niveladoras',
     loadComponent: () =>
       import('./features/product-detail/product-detail.component').then(
-        (m) => m.ProductDetailComponent
+        (m) => m.ProductDetailComponent,
       ),
     data: { slug: 'plataformas-niveladoras' },
   },
@@ -64,7 +64,7 @@ export const routes: Routes = [
     path: 'puertas-seccionales',
     loadComponent: () =>
       import('./features/product-detail/product-detail.component').then(
-        (m) => m.ProductDetailComponent
+        (m) => m.ProductDetailComponent,
       ),
     data: { slug: 'puertas-seccionales' },
   },
@@ -72,7 +72,7 @@ export const routes: Routes = [
     path: 'abrigos',
     loadComponent: () =>
       import('./features/product-detail/product-detail.component').then(
-        (m) => m.ProductDetailComponent
+        (m) => m.ProductDetailComponent,
       ),
     data: { slug: 'abrigos' },
   },
@@ -80,7 +80,7 @@ export const routes: Routes = [
     path: 'docking-before-opening',
     loadComponent: () =>
       import('./features/product-detail/product-detail.component').then(
-        (m) => m.ProductDetailComponent
+        (m) => m.ProductDetailComponent,
       ),
     data: { slug: 'docking-before-opening' },
   },
@@ -88,7 +88,7 @@ export const routes: Routes = [
     path: 'loading-houses',
     loadComponent: () =>
       import('./features/product-detail/product-detail.component').then(
-        (m) => m.ProductDetailComponent
+        (m) => m.ProductDetailComponent,
       ),
     data: { slug: 'loading-houses' },
   },
@@ -96,7 +96,7 @@ export const routes: Routes = [
     path: 'protecciones',
     loadComponent: () =>
       import('./features/product-detail/product-detail.component').then(
-        (m) => m.ProductDetailComponent
+        (m) => m.ProductDetailComponent,
       ),
     data: { slug: 'protecciones' },
   },
@@ -104,7 +104,7 @@ export const routes: Routes = [
     path: 'puertas-especializadas',
     loadComponent: () =>
       import('./features/product-detail/product-detail.component').then(
-        (m) => m.ProductDetailComponent
+        (m) => m.ProductDetailComponent,
       ),
     data: { slug: 'puertas-especializadas' },
   },
@@ -112,16 +112,32 @@ export const routes: Routes = [
     path: 'puertas-cortafuego-atex',
     loadComponent: () =>
       import('./features/product-detail/product-detail.component').then(
-        (m) => m.ProductDetailComponent
+        (m) => m.ProductDetailComponent,
       ),
     data: { slug: 'puertas-especializadas' },
+  },
+  {
+    path: 'puertas-metalicas',
+    loadComponent: () =>
+      import('./features/product-detail/product-detail.component').then(
+        (m) => m.ProductDetailComponent,
+      ),
+    data: { slug: 'puertas-metalicas' },
+  },
+  {
+    path: 'cortinas-de-aire',
+    loadComponent: () =>
+      import('./features/product-detail/product-detail.component').then(
+        (m) => m.ProductDetailComponent,
+      ),
+    data: { slug: 'cortinas-de-aire' },
   },
   // Keep products/:slug for backward compatibility
   {
     path: 'products/:slug',
     loadComponent: () =>
       import('./features/product-detail/product-detail.component').then(
-        (m) => m.ProductDetailComponent
+        (m) => m.ProductDetailComponent,
       ),
   },
   {
