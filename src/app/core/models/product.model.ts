@@ -1,10 +1,16 @@
 // Typed model for a single product entry from content.json
 
+export interface SubType {
+  title: string;
+  images: string[];
+}
+
 export interface SubCategory {
   title: string;
   subtitle?: string;
   content: string[];
   images: string[];
+  subTypes?: SubType[];
 }
 
 export interface Product {

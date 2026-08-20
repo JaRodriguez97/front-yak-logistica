@@ -40,6 +40,34 @@
           "assets/images/puertas-rapidas/refrigeracion/frigo-2-air/puerta-rapida-refrigeracion-frigo-2-air-01.png",
           "assets/images/puertas-rapidas/refrigeracion/frigo-2-air/puerta-rapida-refrigeracion-frigo-2-air-02.png",
           "assets/images/puertas-rapidas/refrigeracion/frigo-2-air/puerta-rapida-refrigeracion-frigo-2-air-inox.png"
+        ],
+        "subTypes": [
+          {
+            "title": "Frigo 1",
+            "images": [
+              "assets/images/puertas-rapidas/refrigeracion/frigo-1/puerta-rapida-refrigeracion-frigo-1-air-01.png",
+              "assets/images/puertas-rapidas/refrigeracion/frigo-1/puerta-rapida-refrigeracion-frigo-1-01.png",
+              "assets/images/puertas-rapidas/refrigeracion/frigo-1/puerta-rapida-refrigeracion-frigo-1-02.png",
+              "assets/images/puertas-rapidas/refrigeracion/frigo-1/puerta-rapida-refrigeracion-frigo-1-muestra-02.png"
+            ]
+          },
+          {
+            "title": "Frigo 2",
+            "images": [
+              "assets/images/puertas-rapidas/refrigeracion/frigo-2/puerta-rapida-refrigeracion-frigo-2-01.png",
+              "assets/images/puertas-rapidas/refrigeracion/frigo-2/puerta-rapida-refrigeracion-frigo-2-02.png",
+              "assets/images/puertas-rapidas/refrigeracion/frigo-2/puerta-rapida-refrigeracion-frigo-2-03.png"
+            ]
+          },
+          {
+            "title": "Frigo 2 AIR",
+            "images": [
+              "assets/images/puertas-rapidas/refrigeracion/frigo-2-air/puerta-rapida-refrigeracion-frigo-2-air-pintura-electrostacia.png",
+              "assets/images/puertas-rapidas/refrigeracion/frigo-2-air/puerta-rapida-refrigeracion-frigo-2-air-01.png",
+              "assets/images/puertas-rapidas/refrigeracion/frigo-2-air/puerta-rapida-refrigeracion-frigo-2-air-02.png",
+              "assets/images/puertas-rapidas/refrigeracion/frigo-2-air/puerta-rapida-refrigeracion-frigo-2-air-inox.png"
+            ]
+          }
         ]
       },
       {

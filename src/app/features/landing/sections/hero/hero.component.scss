@@ -56,12 +56,16 @@
     box-shadow 0.25s ease;
 
   &:hover {
-    transform: translateX(-6px);
+    transform: translateY(-4px);
+
+    @media (min-width: 1024px) {
+      transform: translateX(-6px);
+    }
   }
 
   &.active {
-    background: rgba(255, 255, 255, 0.24);
-    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.24) !important;
+    border-color: rgba(255, 255, 255, 0.6) !important;
     box-shadow: 0 8px 18px -12px rgba(0, 0, 0, 0.45);
   }
 }

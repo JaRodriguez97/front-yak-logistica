@@ -20,6 +20,7 @@ export class ProductDetailComponent implements OnInit {
 
   product: Product | undefined;
   activeTabIdx = signal<number>(0);
+  activeSubTypeIdx = signal<number | null>(null);
   activeImageIndex = signal<number | null>(null);
 
   // Zoom & Pan states
@@ -161,7 +162,13 @@ export class ProductDetailComponent implements OnInit {
 
   getActiveImages(): string[] {
     const subCat = this.getActiveSubCategory();
-    if (subCat) return subCat.images;
+    if (subCat) {
+      const subTypeIdx = this.activeSubTypeIdx();
+      if (subTypeIdx !== null && subCat.subTypes && subCat.subTypes[subTypeIdx]) {
+        return subCat.subTypes[subTypeIdx].images;
+      }
+      return subCat.images;
+    }
     return this.product?.images ?? [];
   }
 
@@ -173,6 +180,17 @@ export class ProductDetailComponent implements OnInit {
 
   setActiveTab(index: number): void {
     this.activeTabIdx.set(index);
+    const subCat = this.product?.subCategories?.[index];
+    if (subCat?.subTypes && subCat.subTypes.length > 0) {
+      this.activeSubTypeIdx.set(0);
+    } else {
+      this.activeSubTypeIdx.set(null);
+    }
+    this.updateSeo();
+  }
+
+  setActiveSubType(index: number): void {
+    this.activeSubTypeIdx.set(index);
     this.updateSeo();
   }
 
@@ -199,6 +217,13 @@ export class ProductDetailComponent implements OnInit {
             }
           } else {
             this.activeTabIdx.set(0);
+          }
+
+          const subCat = product.subCategories?.[this.activeTabIdx()];
+          if (subCat?.subTypes && subCat.subTypes.length > 0) {
+            this.activeSubTypeIdx.set(0);
+          } else {
+            this.activeSubTypeIdx.set(null);
           }
 
           this.updateSeo();

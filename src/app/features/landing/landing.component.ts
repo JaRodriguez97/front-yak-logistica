@@ -9,7 +9,7 @@ import { ServicesComponent } from './sections/services/services.component';
 import { ValueComponent } from './sections/value/value.component';
 import { CasesComponent } from './sections/cases/cases.component';
 import { ClientsComponent } from './sections/clients/clients.component';
-import { CertsComponent } from './sections/certs/certs.component';
+// import { CertsComponent } from './sections/certs/certs.component';
 import { CoverageComponent } from './sections/coverage/coverage.component';
 import { ContactComponent } from './sections/contact/contact.component';
 
@@ -98,7 +98,7 @@ const FAQ_SCHEMA = {
     ValueComponent,
     CasesComponent,
     ClientsComponent,
-    CertsComponent,
+    // CertsComponent,
     CoverageComponent,
     ContactComponent,
   ],

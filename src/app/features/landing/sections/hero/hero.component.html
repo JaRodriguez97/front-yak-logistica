@@ -1,4 +1,4 @@
-﻿<section
+<section
   id="inicio"
   class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden"
 >
@@ -38,13 +38,13 @@
       >
         <!-- Heading -->
         <h1
-          class="hero-heading font-headline-xl text-headline-xl md:text-[56px] md:leading-[64px] max-w-4xl mb-6 tracking-tight animate-fade-in"
+          class="hero-heading font-headline-xl text-3xl sm:text-4xl md:text-5xl lg:text-[56px] lg:leading-[64px] max-w-4xl mb-6 tracking-tight animate-fade-in"
           [innerHTML]="activeTitle()"
         ></h1>
 
         <!-- Description -->
         <p
-          class="hero-description font-body-lg text-body-lg md:text-xl text-gray-200 max-w-2xl mb-10 animate-fade-in animation-delay-200"
+          class="hero-description font-body-lg text-base sm:text-lg md:text-xl text-gray-200 max-w-2xl mb-10 animate-fade-in animation-delay-200"
         >
           {{ activeDescription() }}
         </p>
@@ -66,42 +66,53 @@
               >arrow_forward</span
             >
           </a>
-          <a
-            routerLink="/"
-            fragment="services"
-            class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-full font-label-sm text-label-sm font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-center animate-fade-in animation-delay-500"
-          >
-            Ver Portafolio
-          </a>
+          @if (isServiceSelected()) {
+            <a
+              [routerLink]="activeRoute()"
+              class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-full font-label-sm text-label-sm font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-center animate-fade-in animation-delay-500"
+            >
+              Ver Detalle
+            </a>
+          } @else {
+            <a
+              routerLink="/"
+              fragment="services"
+              class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-full font-label-sm text-label-sm font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-center animate-fade-in animation-delay-500"
+            >
+              Ver Portafolio
+            </a>
+          }
         </div>
 
         <!-- Stats -->
         <div
-          class="hero-stats grid grid-cols-2 lg:grid-cols-5 gap-4 w-full max-w-5xl mx-auto"
+          class="hero-stats grid grid-cols-2 md:grid-cols-5 gap-4 sm:gap-6 w-full max-w-5xl mx-auto"
         >
           @for (counter of counters; track counter.label; let i = $index) {
             <div
-              class="animate-fade-in"
+              class="animate-fade-in col-span-1"
+              [class.col-span-2]="i === 4"
+              [class.md:col-span-1]="i === 4"
               [style.animation-delay.ms]="i >= 3 ? 800 : 500 + i * 100"
             >
               <a
                 [routerLink]="counter.route"
-                class="glass-card-light rounded-2xl p-6 text-center text-black transform hover:-translate-y-2 hover:scale-95 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 group cursor-pointer flex flex-col justify-between h-full"
+                class="glass-card-light rounded-2xl p-4 sm:p-6 text-center text-black transform hover:-translate-y-2 hover:scale-95 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 group cursor-pointer flex flex-col justify-between h-full"
               >
                 <img
                   [src]="counter.image"
                   [alt]="counter.label + ' - Métrica YAK Logística'"
-                  class="h-25 w-auto object-contain mx-auto transition-transform duration-300"
+                  class="h-16 sm:h-20 md:h-24 w-auto object-contain mx-auto transition-transform duration-300"
                 />
                 <div
-                  class="font-headline-md text-headline-md font-bold transform group-hover:scale-105 group-hover:text-primary transition-all duration-300 stats-counter-value"
+                  class="text-2xl sm:text-3xl font-bold transform group-hover:scale-105 group-hover:text-primary transition-all duration-300 stats-counter-value"
                   [attr.data-target]="counter.target"
                   [attr.data-prefix]="counter.prefix"
                 >
                   {{ counter.prefix }}0
                 </div>
                 <div
-                  class="font-label-sm text-label-sm text-black font-medium group-hover:text-black transition-colors duration-300"
+                  class="text-xs sm:text-sm text-black font-medium group-hover:text-black transition-colors duration-300 font-label-sm"
                 >
                   {{ counter.label }}
                 </div>
@@ -116,14 +127,14 @@
   <!-- Services Panel -->
   <aside
     id="hero-services-panel"
-    class="hero-services-panel w-full max-w-max mx-auto mt-8 lg:mt-0 lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 rounded-xl p-4 md:p-3 text-left z-20"
+    class="hero-services-panel w-full lg:max-w-max mx-auto mt-8 lg:mt-0 lg:absolute lg:right-6 lg:top-1/2 lg:-translate-y-1/2 p-4 lg:p-3 z-20"
   >
-    <ul class="space-y-2">
+    <ul class="flex flex-row lg:flex-col flex-wrap justify-center gap-2">
       @for (service of services; track service.alt; let i = $index) {
-        <li class="animate-fade-in" [style.animation-delay.ms]="300 + i * 100">
+        <li class="animate-fade-in flex-shrink-0" [style.animation-delay.ms]="300 + i * 100">
           <a
             [routerLink]="service.route"
-            class="hero-service-item w-full flex items-center justify-center rounded-xl border border-white/30 p-2 transition-colors"
+            class="hero-service-item w-full flex items-center justify-center rounded-xl border border-white/30 p-1.5 sm:p-2 transition-all duration-300"
             [style.background]="
               activeIndex() === i
                 ? 'rgba(255,255,255,0.10)'
@@ -133,6 +144,7 @@
             [attr.aria-pressed]="activeIndex() === i"
             (mouseenter)="onServiceHover(i)"
             (focus)="onServiceHover(i)"
+            (click)="onServiceClick($event, i)"
           >
             <img
               [src]="service.thumb"

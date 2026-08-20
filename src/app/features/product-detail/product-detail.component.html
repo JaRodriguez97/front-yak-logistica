@@ -115,6 +115,28 @@
             }
           </div>
 
+          <!-- Sub-tabs Navigation (optional) -->
+          @if (getActiveSubCategory()?.subTypes; as subTypes) {
+            @if (subTypes.length > 0) {
+              <div class="mb-10 flex flex-wrap gap-3 animate-fade-in">
+                @for (type of subTypes; track type.title; let idx = $index) {
+                  <button
+                    type="button"
+                    (click)="setActiveSubType(idx)"
+                    [class.bg-primary]="activeSubTypeIdx() === idx"
+                    [class.text-white]="activeSubTypeIdx() === idx"
+                    [class.bg-gray-100]="activeSubTypeIdx() !== idx"
+                    [class.text-gray-600]="activeSubTypeIdx() !== idx"
+                    [class.hover:bg-gray-200]="activeSubTypeIdx() !== idx"
+                    class="px-5 py-2 rounded-full font-label-sm text-sm font-bold uppercase tracking-wider transition-all focus:outline-none hover:scale-105 active:scale-95 duration-200 shadow-sm"
+                  >
+                    {{ type.title }}
+                  </button>
+                }
+              </div>
+            }
+          }
+
           <!-- Active Subcategory Content -->
           <div class="mb-12 max-w-4xl">
             <h2

@@ -130,6 +130,15 @@ export class HeroComponent implements OnInit, OnDestroy {
       : this.defaultDescription;
   });
 
+  readonly activeRoute = computed(() => {
+    const idx = this.hoveredServiceIndex();
+    return idx !== null ? this.services[idx].route : null;
+  });
+
+  readonly isServiceSelected = computed(() => {
+    return this.hoveredServiceIndex() !== null;
+  });
+
   private bgTimer: ReturnType<typeof setTimeout> | null = null;
   private targetHoveredIndex: number | null = null;
 
@@ -183,6 +192,14 @@ export class HeroComponent implements OnInit, OnDestroy {
   onServiceHover(index: number): void {
     this.activeIndex.set(index);
     this.updateHoveredIndex(index);
+  }
+
+  onServiceClick(event: MouseEvent, index: number): void {
+    if (this.hoveredServiceIndex() !== index) {
+      event.preventDefault();
+      this.activeIndex.set(index);
+      this.updateHoveredIndex(index);
+    }
   }
 
   private updateHoveredIndex(index: number | null): void {

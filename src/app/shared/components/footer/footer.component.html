@@ -1,4 +1,4 @@
-﻿<!-- WhatsApp FAB -->
+<!-- WhatsApp FAB -->
 <a
   class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 z-50 hover:shadow-2xl"
   href="https://wa.me/573104615185"
@@ -20,113 +20,142 @@
 </a>
 
 <!-- Footer -->
-<footer class="w-full block bg-gray-100">
+<footer class="w-full bg-gray-50 border-t border-gray-200 relative overflow-hidden">
+  <!-- Brand Accent Line -->
+  <div class="h-1 w-full bg-gradient-to-r from-primary via-primary-container to-primary"></div>
+  
   <div
-    class="grid grid-cols-1 md:grid-cols-4 gap-bento-gap max-w-screen-2xl mx-auto px-margin-mobile md:px-margin-desktop py-16"
+    class="max-w-screen-2xl mx-auto px-margin-mobile md:px-margin-desktop py-16"
   >
-    <!-- Brand -->
-    <div class="md:col-span-1">
-      <div
-        class="text-headline-md font-headline-md font-extrabold text-black mb-4"
-      >
-        <img
-          src="assets/images/logo.png"
-          alt="Logotipo oficial de YAK Soluciones Logísticas en pie de página"
-          loading="lazy"
-          class="h-8 object-contain mix-blend-multiply"
-        />
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+      <!-- Brand -->
+      <div class="flex flex-col gap-4 text-left">
+        <a routerLink="/" class="inline-block">
+          <img
+            src="assets/images/logo.png"
+            alt="Logotipo oficial de YAK Soluciones Logísticas en pie de página"
+            loading="lazy"
+            class="h-8 object-contain mix-blend-multiply"
+          />
+        </a>
+        <p class="text-sm leading-relaxed text-gray-500 max-w-sm font-body-md">
+          Optimizando la logística industrial con soluciones de acceso, sellado y nivelación de clase mundial.
+        </p>
       </div>
-      <p class="text-body-md font-body-md text-gray-500 mb-6">
-        Optimizando la logística industrial con soluciones de acceso y carga de
-        clase mundial.
-      </p>
-    </div>
 
-    <!-- Links -->
-    <div class="md:col-span-2 grid grid-cols-2 gap-8">
-      <div>
-        <h5
-          class="text-label-sm font-label-sm font-bold text-black mb-4 uppercase tracking-wider"
-        >
+      <!-- Links: Servicios -->
+      <div class="text-left">
+        <h5 class="text-xs font-bold text-black uppercase tracking-wider mb-6 font-label-sm">
           Servicios
         </h5>
         <ul class="space-y-3">
           <li>
             <a
               routerLink="/puertas-rapidas"
-              class="text-gray-500 hover:text-primary hover:underline transition-all text-body-md font-body-md"
+              class="text-sm text-gray-500 hover:text-primary hover:translate-x-1.5 transition-all duration-300 inline-flex items-center gap-1 group font-body-md"
             >
+              <span class="w-1 h-1 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></span>
               Puertas Rápidas
             </a>
           </li>
           <li>
             <a
               routerLink="/plataformas-niveladoras"
-              class="text-gray-500 hover:text-primary hover:underline transition-all text-body-md font-body-md"
+              class="text-sm text-gray-500 hover:text-primary hover:translate-x-1.5 transition-all duration-300 inline-flex items-center gap-1 group font-body-md"
             >
+              <span class="w-1 h-1 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></span>
               Plataformas y Mesas Niveladoras
             </a>
           </li>
           <li>
             <a
               routerLink="/puertas-cortafuego-atex"
-              class="text-gray-500 hover:text-primary hover:underline transition-all text-body-md font-body-md"
+              class="text-sm text-gray-500 hover:text-primary hover:translate-x-1.5 transition-all duration-300 inline-flex items-center gap-1 group font-body-md"
             >
+              <span class="w-1 h-1 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></span>
               Puertas Cortafuego ATEX
             </a>
           </li>
           <li>
             <a
               routerLink="/abrigos"
-              class="text-gray-500 hover:text-primary hover:underline transition-all text-body-md font-body-md"
+              class="text-sm text-gray-500 hover:text-primary hover:translate-x-1.5 transition-all duration-300 inline-flex items-center gap-1 group font-body-md"
             >
+              <span class="w-1 h-1 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></span>
               Abrigos de Muelle
             </a>
           </li>
         </ul>
       </div>
-      <div>
-        <h5
-          class="text-label-sm font-label-sm font-bold text-black mb-4 uppercase tracking-wider"
-        >
+
+      <!-- Links: Legal -->
+      <div class="text-left">
+        <h5 class="text-xs font-bold text-black uppercase tracking-wider mb-6 font-label-sm">
           Legal
         </h5>
         <ul class="space-y-3">
           <li>
             <a
               href="#"
-              class="text-gray-500 hover:text-primary hover:underline transition-all text-body-md font-body-md"
+              class="text-sm text-gray-500 hover:text-primary hover:translate-x-1.5 transition-all duration-300 inline-flex items-center gap-1 group font-body-md"
             >
+              <span class="w-1 h-1 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></span>
               Aviso de Privacidad
             </a>
           </li>
           <li>
             <a
               href="#"
-              class="text-gray-500 hover:text-primary hover:underline transition-all text-body-md font-body-md"
+              class="text-sm text-gray-500 hover:text-primary hover:translate-x-1.5 transition-all duration-300 inline-flex items-center gap-1 group font-body-md"
             >
+              <span class="w-1 h-1 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></span>
               Términos de Servicio
             </a>
           </li>
         </ul>
       </div>
-    </div>
 
-    <!-- Contact & Copyright -->
-    <div class="md:col-span-1 flex flex-col justify-between">
-      <div>
-        <h5
-          class="text-label-sm font-label-sm font-bold text-black mb-4 uppercase tracking-wider"
-        >
+      <!-- Contact -->
+      <div class="text-left">
+        <h5 class="text-xs font-bold text-black uppercase tracking-wider mb-6 font-label-sm">
           Contacto
         </h5>
-        <p class="text-body-md font-body-md text-gray-500 mb-2">
-          contacto&#64;yaksoluciones.com
-        </p>
-        <p class="text-body-md font-body-md text-gray-500">+57 310 461 5185</p>
+        <ul class="space-y-3 text-sm text-gray-500 font-body-md">
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-base">mail</span>
+            <a href="mailto:contacto@yaksoluciones.com" class="hover:text-primary transition-colors">
+              contacto&#64;yaksoluciones.com
+            </a>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-base">call</span>
+            <a href="tel:+573104615185" class="hover:text-primary transition-colors font-semibold">
+              +57 310 461 5185
+            </a>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-base">location_on</span>
+            <span>Colombia</span>
+          </li>
+        </ul>
       </div>
-      <div class="mt-8 text-label-sm font-label-sm text-gray-500">
+    </div>
+
+    <!-- Bottom Copyright Divider -->
+    <div class="border-t border-gray-200 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500 font-body-md">
+      <div>
         © {{ year }} YAK Soluciones Logísticas. Todos los derechos reservados.
+      </div>
+      <div class="flex items-center gap-1.5">
+        <span>Respaldo y experiencia de</span>
+        <a
+          href="https://refridcol.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-bold text-black hover:text-primary transition-colors"
+        >
+          Industrias Refridcol S.A.S.
+        </a>
       </div>
     </div>
   </div>
